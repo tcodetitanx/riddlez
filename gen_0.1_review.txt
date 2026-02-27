@@ -1,0 +1,295 @@
+================================================================================
+                    GENERATION 0.1 - BASELINE EVALUATION
+                    TWENTY_ORIGINAL_PUZZLES.pdf Review
+================================================================================
+
+EVALUATION CRITERIA:
+- Originality (1-10): How novel is this puzzle? Does it avoid being a reskin of classics?
+- Cleverness of Solution (1-10): Is the solution elegant, surprising, and satisfying?
+- Simplicity of Setup (1-10): Can the puzzle be explained clearly and concisely?
+- Solution Success (1-10): Does the solution actually work and fully solve the riddle?
+
+ANTI-OVERFITTING PARAMETERS:
+- Trivial Rejection: Puzzles like "1+1=?" score 0/10 on Originality
+- Broken Logic Rejection: Puzzles with logical inconsistencies score max 3/10 on Solution Success
+- Narrative Dependency: Pure story with no logical core scores max 4/10 on Cleverness
+- Accessibility Floor: If setup requires PhD-level knowledge, max 5/10 on Simplicity
+
+================================================================================
+
+PUZZLE 1: The Quantum Mailboxes
+--------------------------------------------------------------------------------
+SETUP: 8 mailboxes in a row. Opening empty mailbox causes letter to tunnel from adjacent box.
+SOLUTION: Open boxes 1-7 in sequence; letter in box 8 tunnels to 7 on final opening.
+
+Originality:        7/10 - Novel mechanic (quantum tunneling metaphor), but state-space archetype
+Cleverness:         6/10 - Solution is systematic rather than insightful; "sweep" is obvious
+Simplicity:         8/10 - Clear rules, easy to understand
+Solution Success:   7/10 - Works but the solution explanation is self-contradicting in places
+
+TOTAL: 28/40
+
+--------------------------------------------------------------------------------
+
+PUZZLE 2: The Referendum Paradox
+--------------------------------------------------------------------------------
+SETUP: 100 voters, votes nullified if they reveal the voter's choice with certainty.
+SOLUTION: ~12-13 votes count before system gets stuck (random walk analysis).
+
+Originality:        9/10 - Unique mechanism combining voting, privacy, and random walks
+Cleverness:         8/10 - The O(sqrt(n)) result is mathematically elegant
+Simplicity:         6/10 - Requires understanding of "revealing with certainty" concept
+Solution Success:   7/10 - Mathematical hand-waving; doesn't give exact procedure
+
+TOTAL: 30/40
+
+--------------------------------------------------------------------------------
+
+PUZZLE 3: The Hive Mind Heist
+--------------------------------------------------------------------------------
+SETUP: 5 telepathic thieves, pressure plates with adjacency requirements.
+SOLUTION: ACKNOWLEDGED AS NEEDING REFINEMENT IN SOURCE.
+
+Originality:        5/10 - Constraint satisfaction with telepathy flavor
+Cleverness:         3/10 - The puzzle as written is trivially satisfied or broken
+Simplicity:         4/10 - Confusing setup, requirements unclear
+Solution Success:   2/10 - PUZZLE FAILS - solution admits the constraints are always met
+
+TOTAL: 14/40 [BROKEN]
+
+--------------------------------------------------------------------------------
+
+PUZZLE 4: The Temporal Voting Booth
+--------------------------------------------------------------------------------
+SETUP: Voters see tomorrow's newspaper showing election results before voting.
+SOLUTION: Nash equilibrium analysis; B wins with 66 votes.
+
+Originality:        8/10 - Time paradox + voting theory is novel combination
+Cleverness:         8/10 - Fixed-point reasoning is elegant
+Simplicity:         5/10 - Requires game theory background to fully grasp
+Solution Success:   8/10 - Well-reasoned with clear equilibrium
+
+TOTAL: 29/40
+
+--------------------------------------------------------------------------------
+
+PUZZLE 5: The Unreliable Narrator
+--------------------------------------------------------------------------------
+SETUP: Murder mystery with 1 guilty liar + 1 innocent liar among 5 suspects.
+SOLUTION: Carol is guilty (after fixing Dave's statement).
+
+Originality:        6/10 - Knights/knaves variant with "innocent liar" twist
+Cleverness:         7/10 - The double-liar constraint creates interesting logic
+Simplicity:         7/10 - Standard murder mystery framing
+Solution Success:   5/10 - ADMITS TWO SOLUTIONS before modification; puzzle needed fixing
+
+TOTAL: 25/40
+
+--------------------------------------------------------------------------------
+
+PUZZLE 6: The Inheritance Auction
+--------------------------------------------------------------------------------
+SETUP: 5 heirs bid for $100M fortune; ties destroy fortune.
+SOLUTION: Mixed strategy equilibrium; expected value ~$0.
+
+Originality:        5/10 - Standard auction theory with destruction twist
+Cleverness:         6/10 - Destruction rule doesn't fundamentally change analysis
+Simplicity:         6/10 - Auction mechanics familiar but tie rule confusing
+Solution Success:   4/10 - Solution is vague ("mixed strategy") without concrete answer
+
+TOTAL: 21/40
+
+--------------------------------------------------------------------------------
+
+PUZZLE 7: The Panopticon
+--------------------------------------------------------------------------------
+SETUP: 100 prisoners in ring, each sees 2 neighbors' colors, guess own color.
+SOLUTION: Expected 50 correct; no strategy beats random.
+
+Originality:        6/10 - Circular hat problem variant
+Cleverness:         5/10 - The insight (no improvement possible) is somewhat anticlimactic
+Simplicity:         8/10 - Clear setup
+Solution Success:   6/10 - Correct but unsatisfying "you can't do better" answer
+
+TOTAL: 25/40
+
+--------------------------------------------------------------------------------
+
+PUZZLE 8: The Clone Dilemma
+--------------------------------------------------------------------------------
+SETUP: 100 clones decide independently to push button; >50 pushes kills all.
+SOLUTION: Don't push (all clones reason identically).
+
+Originality:        8/10 - Identity paradox + game theory is fresh
+Cleverness:         9/10 - The "you're choosing a policy for all copies" insight is excellent
+Simplicity:         9/10 - Very clean setup
+Solution Success:   9/10 - Elegant, complete solution
+
+TOTAL: 35/40 [BEST SO FAR]
+
+--------------------------------------------------------------------------------
+
+PUZZLE 9: The Broken Telephone Oracle
+--------------------------------------------------------------------------------
+SETUP: Oracle's answer passes through 5 noisy messengers (2/3 correct transmission).
+SOLUTION: P(correct after 5) = 122/243 ~ 50.2%
+
+Originality:        4/10 - Standard Markov chain / noisy channel problem
+Cleverness:         6/10 - Clean mathematical solution
+Simplicity:         8/10 - Easy to understand
+Solution Success:   9/10 - Exact, verifiable answer
+
+TOTAL: 27/40
+
+--------------------------------------------------------------------------------
+
+PUZZLE 10: The Voting Paradox
+--------------------------------------------------------------------------------
+SETUP: 5 voters, ballots revealed sequentially, anyone can shout STOP.
+SOLUTION: Proposal passes 60% of the time.
+
+Originality:        7/10 - Stopping rule + voting is novel combination
+Cleverness:         8/10 - The "first ballot determines winner" insight is nice
+Simplicity:         6/10 - Somewhat complex rules
+Solution Success:   8/10 - Thorough case analysis
+
+TOTAL: 29/40
+
+--------------------------------------------------------------------------------
+
+PUZZLE 11: The Paradox of the Heap
+--------------------------------------------------------------------------------
+SETUP: Philosopher with +/-10 perception error; guess grain count with one question.
+SOLUTION: Asks about perfect squares... then admits question optimization is unclear.
+
+Originality:        7/10 - Sorites paradox in puzzle form is creative
+Cleverness:         4/10 - No clear optimal strategy found
+Simplicity:         5/10 - Perception error rules are confusing
+Solution Success:   3/10 - ADMITS NO CLEAR SOLUTION
+
+TOTAL: 19/40 [BROKEN]
+
+--------------------------------------------------------------------------------
+
+PUZZLE 12: The Mirror Maze
+--------------------------------------------------------------------------------
+SETUP: 8 rooms in ring, mirrors flip on entry, goal is all same symbol.
+SOLUTION: "Lights-out" style analysis... but admits puzzle needs work.
+
+Originality:        6/10 - Toggle puzzle variant
+Cleverness:         5/10 - Standard lights-out approach
+Simplicity:         7/10 - Clear mechanics
+Solution Success:   4/10 - INCOMPLETE SOLUTION PROVIDED
+
+TOTAL: 22/40
+
+--------------------------------------------------------------------------------
+
+PUZZLE 13: The Precog Prisoner
+--------------------------------------------------------------------------------
+SETUP: Prisoner sees 1 minute ahead; must escape during TAILS flip.
+SOLUTION: P(escape) = 1/2; precognition doesn't help.
+
+Originality:        6/10 - Precognition + probability
+Cleverness:         7/10 - The "precognition is useless" twist is interesting
+Simplicity:         6/10 - Timing rules unclear
+Solution Success:   7/10 - Works but relies on specific timing interpretation
+
+TOTAL: 26/40
+
+--------------------------------------------------------------------------------
+
+PUZZLE 14: The Diplomatic Immunity
+--------------------------------------------------------------------------------
+SETUP: 5 ambassadors, one criminal liar, knights/knaves style.
+SOLUTION: INCONSISTENT - puzzle has no valid solution as stated.
+
+Originality:        5/10 - Standard knights/knaves
+Cleverness:         4/10 - Cannot be clever if broken
+Simplicity:         7/10 - Clear format
+Solution Success:   1/10 - PUZZLE IS LOGICALLY IMPOSSIBLE
+
+TOTAL: 17/40 [BROKEN]
+
+--------------------------------------------------------------------------------
+
+PUZZLE 15: The Infinite Regress
+--------------------------------------------------------------------------------
+SETUP: Take $1M now OR play game with increasing payoffs but $0 if never stop.
+SOLUTION: Take $1M (dominance reasoning leads to $0).
+
+Originality:        7/10 - Centipede game variant
+Cleverness:         8/10 - Self-control insight is valuable
+Simplicity:         9/10 - Very clear setup
+Solution Success:   8/10 - Well-reasoned
+
+TOTAL: 32/40
+
+--------------------------------------------------------------------------------
+
+PUZZLES 16-20: Brief Summaries Only
+--------------------------------------------------------------------------------
+These puzzles are only described conceptually without full solutions.
+
+Puzzle 16 (Quantum Election): Originality 7, Cleverness N/A, Simplicity N/A, Solution N/A
+Puzzle 17 (Time Loop Heist): Originality 8, Cleverness N/A, Simplicity N/A, Solution N/A
+Puzzle 18 (Paradox Machine): Originality 6, Cleverness N/A, Simplicity N/A, Solution N/A
+Puzzle 19 (Alien Translator): Originality 7, Cleverness N/A, Simplicity N/A, Solution N/A
+Puzzle 20 (The Last Question): Originality 8, Cleverness N/A, Simplicity N/A, Solution N/A
+
+TOTAL for 16-20: INCOMPLETE - cannot evaluate
+
+================================================================================
+
+AGGREGATE STATISTICS (Puzzles 1-15 only):
+--------------------------------------------------------------------------------
+Average Originality:        6.4/10
+Average Cleverness:         6.3/10
+Average Simplicity:         6.7/10
+Average Solution Success:   5.9/10
+
+OVERALL AVERAGE:            6.3/10
+
+BROKEN PUZZLES: 4 (Puzzles 3, 11, 12, 14)
+INCOMPLETE PUZZLES: 5 (Puzzles 16-20)
+
+================================================================================
+
+TOP 3 PUZZLES:
+1. Puzzle 8: The Clone Dilemma - 35/40
+2. Puzzle 15: The Infinite Regress - 32/40
+3. Puzzle 2: The Referendum Paradox - 30/40
+
+WORST 3 PUZZLES:
+1. Puzzle 3: The Hive Mind Heist - 14/40 [BROKEN]
+2. Puzzle 14: The Diplomatic Immunity - 17/40 [BROKEN]
+3. Puzzle 11: The Paradox of the Heap - 19/40 [BROKEN]
+
+================================================================================
+
+KEY INSIGHTS FOR IMPROVEMENT:
+--------------------------------------------------------------------------------
+1. SOLUTION VERIFICATION: Many puzzles have solutions that don't fully work or
+   are acknowledged as needing refinement. Future generations must verify solutions.
+
+2. CONSTRAINT TIGHTNESS: The best puzzle (Clone Dilemma) has perfectly tight
+   constraints - changing any element breaks the puzzle.
+
+3. SIMPLICITY VS DEPTH: High-scoring puzzles have simple setups with deep solutions.
+   Low-scoring puzzles have complex setups with shallow or broken solutions.
+
+4. ARCHETYPE FUSION: Novel puzzles successfully combine archetypes (Clone Dilemma
+   combines identity + game theory). Failed puzzles add complexity without insight.
+
+5. NARRATIVE INTEGRATION: Story should hide mechanism, not complicate it.
+
+================================================================================
+
+RECOMMENDED PROMPT EVOLUTION FOCUS:
+- Emphasize solution verification before puzzle acceptance
+- Prioritize single-insight "aha" moments over multi-step complexity
+- Require proof that constraints are exactly tight
+- Mandate that all puzzles have unique solutions
+- Test for "broken" logic before finalizing
+
+================================================================================

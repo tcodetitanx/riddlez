@@ -1,0 +1,64 @@
+GENERATION 1 - PROMPT MUTATIONS
+================================
+
+Each mutation modifies the base prompt (Gen 0) in a specific direction based on Gen 0.1 evaluation insights.
+
+================================================================================
+MUTATION A: Solution Verification Focus
+================================================================================
+Added emphasis: "Before finalizing any puzzle, you MUST:
+1. Write out the complete solution step by step
+2. Identify every assumption made
+3. Test at least 2 alternative answers and prove they fail
+4. Verify the solution works for all edge cases
+If you cannot do this, the puzzle is NOT ready."
+
+Key change: Forces explicit proof of uniqueness before acceptance.
+
+================================================================================
+MUTATION B: Constraint Tightness Focus
+================================================================================
+Added emphasis: "The perfect puzzle has constraints that are EXACTLY tight:
+- One fewer constraint: multiple solutions exist
+- One more constraint: puzzle becomes impossible
+- Count the degrees of freedom and match them exactly to constraints
+Design backwards: start with the elegant solution, then add minimum constraints."
+
+Key change: Mathematical precision in constraint design.
+
+================================================================================
+MUTATION C: Simplicity-Depth Ratio Focus
+================================================================================
+Added emphasis: "The golden ratio is SIMPLE SETUP, DEEP SOLUTION:
+- Setup: A child should understand the rules in 30 seconds
+- Solution: An adult should need 10+ minutes of thinking
+- Word count: Setup < 75 words, Solution can be unlimited
+If the setup is complex, simplify until a 10-year-old could explain it."
+
+Key change: Aggressive simplification of setup.
+
+================================================================================
+MUTATION D: Single Aha Moment Focus
+================================================================================
+Added emphasis: "Every great puzzle has ONE key insight:
+- There should be a single moment of 'Oh! I see it now!'
+- All other steps flow naturally from that insight
+- The insight should be non-obvious but feel inevitable once seen
+- Avoid puzzles requiring multiple unrelated breakthroughs
+Identify your insight FIRST, then build the puzzle around it."
+
+Key change: Insight-first design methodology.
+
+================================================================================
+MUTATION E: Archetype Fusion Novelty Focus
+================================================================================
+Added emphasis: "Create genuine novelty through archetype collision:
+- Pick two archetypes that have NEVER been combined before
+- The interaction must create emergent complexity
+- Neither archetype alone would produce this puzzle
+- The fusion should feel natural, not forced
+Examples: Game Theory + Self-Reference, Bayesian + Common Knowledge"
+
+Key change: Explicit novelty through combination.
+
+================================================================================

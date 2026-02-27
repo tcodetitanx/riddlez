@@ -1,0 +1,102 @@
+================================================================================
+                    GENERATION 1 EVALUATION
+                    15 Riddles from 5 Prompt Mutations
+================================================================================
+
+MUTATION A (Solution Verification Focus):
+--------------------------------------------------------------------------------
+A1: Truthful Liar's Paradox    - BROKEN (impossible)         - N/A
+A2: Synchronized Countdown     - BROKEN (impossible)         - N/A
+A3: Inheritance Split          - Works but standard          - 28/40
+
+MUTATION B (Constraint Tightness Focus):
+--------------------------------------------------------------------------------
+B1: Perfect Handshake          - Classic puzzle (not original) - 23/40
+B2: Three Switches             - Classic puzzle (not original) - 29/40
+B3: Coin Flip Prophecy         - Novel + counterintuitive     - 32/40
+
+MUTATION C (Simplicity-Depth Ratio Focus):
+--------------------------------------------------------------------------------
+C1: Silent Auction             - Too simple, got confused     - 25/40
+C2: Loaded Die                 - Too trivial                  - 25/40
+C3: Three Boxes                - Classic puzzle               - 29/40
+
+MUTATION D (Single Aha Moment Focus):
+--------------------------------------------------------------------------------
+D1: Immune Witness             - BROKEN (two solutions)       - 21/40
+D2: Penny Paradox              - Classic but elegant          - 30/40
+D3: Reluctant Oracle           - Novel but incomplete         - 26/40
+
+MUTATION E (Archetype Fusion Novelty Focus):
+--------------------------------------------------------------------------------
+E1: Voting Logicians           - Novel fusion, good           - 31/40
+E2: Predicting Prisoners       - BEST: Novel + elegant        - 33/40 ★
+E3: Shrinking Room             - Good fusion, moderate        - 28/40
+
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+
+Total Riddles: 15
+Broken Riddles: 3 (A1, A2, D1)
+Classic/Not Original: 4 (B1, B2, C3, D2)
+Novel & Working: 8
+
+Working Riddle Scores:
+A3: 28   B1: 23   B2: 29   B3: 32   C1: 25   C2: 25   C3: 29
+D2: 30   D3: 26   E1: 31   E2: 33   E3: 28
+
+Average Score (working riddles): 28.25/40
+
+BEST RIDDLE: E2 - The Predicting Prisoners (33/40)
+- Originality: 9/10 (novel self-referential setup)
+- Cleverness: 8/10 (focal point insight)
+- Simplicity: 7/10 (clear but needs parsing)
+- Solution Success: 9/10 (verified equilibrium)
+
+WORST MUTATION: A (2 of 3 broke during verification)
+BEST MUTATION: E (all 3 worked, highest average 30.67)
+
+================================================================================
+WINNING PROMPT FOR GENERATION 2
+================================================================================
+MUTATION E: Archetype Fusion Novelty Focus
+
+The key insight: Combining archetypes that haven't been paired before produces
+the most original and high-scoring riddles.
+
+BASE PROMPT FOR GEN 2:
+"Create an original logic puzzle by combining TWO archetypes that produce
+emergent complexity when fused:
+
+Promising fusions not yet explored:
+- Bayesian + Self-Reference (prediction affecting what's predicted)
+- Common Knowledge + Encoding (what signal means depends on shared knowledge)
+- Game Theory + Parity (strategic moves constrained by parity)
+- State Space + Self-Reference (the path changes based on where you are)
+- Constraint Satisfaction + Common Knowledge (constraints depend on what's known)
+
+Requirements:
+1. The fusion must create a puzzle impossible with either archetype alone
+2. Solution should emerge from the INTERACTION, not just having both
+3. Verify solution is unique and complete
+4. Setup under 100 words
+5. One clear 'aha' moment from the archetype collision"
+
+================================================================================
+IMPROVEMENT OVER GENERATION 0.1
+================================================================================
+Gen 0.1 Best: Clone Dilemma - 35/40
+Gen 1 Best: Predicting Prisoners - 33/40
+
+Note: Gen 1 best is slightly LOWER than Gen 0.1 best, but:
+- Gen 1 was more consistent (fewer broken puzzles: 3/15 vs 4/15)
+- Gen 1 better identified what works (Mutation E succeeded)
+- The Predicting Prisoners is MORE ORIGINAL than Clone Dilemma
+
+NEXT STEPS:
+1. Generation 2 will use Mutation E as base
+2. Focus on unexplored archetype fusions
+3. Target: 35+/40
+
+================================================================================

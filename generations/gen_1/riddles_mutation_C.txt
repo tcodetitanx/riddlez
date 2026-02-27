@@ -1,0 +1,147 @@
+MUTATION C - SIMPLICITY-DEPTH RATIO FOCUS
+Maximum simplicity in setup, maximum depth in solution
+========================================================================
+
+RIDDLE C1: The Silent Auction
+------------------------------------------------------------------------
+SETUP:
+Two bidders. One prize. Each writes a bid (any positive amount). Highest bid wins.
+Winner pays what they bid. Both bidders value the prize at exactly $100.
+
+THE QUESTION: What should you bid?
+
+HINT: What if you knew the other person's strategy?
+
+SOLUTION:
+Step 1: This is a first-price sealed-bid auction.
+Step 2: If you bid $100, you win but profit $0 (pay 100 for value 100).
+Step 3: If you bid $99, you profit $1 IF you win. But other person might bid $99.01.
+Step 4: If you bid $0, you never win.
+Step 5: Nash equilibrium: Each bidder randomizes uniformly over [0, 100].
+        - Expected winning bid = 50 (average of uniform winner)
+        - But this maximizes expected profit? Let's verify.
+
+DETAILED ANALYSIS:
+If opponent bids uniformly on [0,V] where V=100:
+- Your bid b wins with probability b/V
+- Your profit when winning: V - b
+- Expected profit: (b/V)(V-b) = b - b²/V
+- Maximize: d/db = 1 - 2b/V = 0 -> b = V/2 = 50
+
+Best response to uniform opponent: bid 50.
+But if BOTH bid 50, they tie. With ties:
+- If tie means split or random winner, expected profit = $25 each.
+- If tie means neither wins, expected profit = $0.
+
+ACTUAL EQUILIBRIUM (no ties in continuous case):
+Each bids uniformly on [0, 100]. Expected profit = $100/3 = $33.33.
+
+Wait, let me recalculate. With both uniform:
+- Your winning probability = E[you > opponent] = 0.5
+- Your expected bid given win ≈ 66.67 (higher bids win more often)
+- Expected profit = 0.5 × (100 - 66.67) = 0.5 × 33.33 ≈ $16.67
+
+This is getting complex. Simpler answer:
+
+SIMPLIFIED ANSWER: In equilibrium, each player's expected profit is $0.
+Proof: If expected profit > 0, opponent could bid epsilon more to steal wins.
+       Competition drives profits to zero.
+
+VERIFICATION:
+- Both bid $100: Win 50%, pay 100, profit 0.
+- Any lower bid: Risk losing entirely.
+- Expected profit = 0 regardless of exact strategy.
+
+ARCHETYPE: Game Theory
+SCORES:
+- Originality: 4/10 (standard auction theory)
+- Cleverness: 5/10 (the zero-profit insight is known)
+- Simplicity: 10/10 (extremely simple setup)
+- Solution Success: 6/10 (got lost in calculations)
+
+TOTAL: 25/40
+
+========================================================================
+
+RIDDLE C2: The Loaded Die
+------------------------------------------------------------------------
+SETUP:
+A die has faces 1-6. It's loaded so that each face has probability proportional
+to the number shown (1 is least likely, 6 is most likely).
+
+THE QUESTION: What's the probability of rolling a 4?
+
+HINT: Sum of all probabilities must equal 1.
+
+SOLUTION:
+Step 1: P(face n) = kn for some constant k.
+Step 2: P(1) + P(2) + ... + P(6) = 1
+Step 3: k(1 + 2 + 3 + 4 + 5 + 6) = 1
+Step 4: k(21) = 1
+Step 5: k = 1/21
+Step 6: P(4) = 4k = 4/21
+
+VERIFICATION:
+- P(1) = 1/21, P(2) = 2/21, P(3) = 3/21, P(4) = 4/21, P(5) = 5/21, P(6) = 6/21
+- Sum = 21/21 = 1 ✓
+- Each probability positive ✓
+- Probabilities increase with face value ✓
+
+ANSWER: 4/21 ≈ 0.190 ≈ 19%
+
+ARCHETYPE: Basic Probability
+SCORES:
+- Originality: 2/10 (textbook problem)
+- Cleverness: 3/10 (single direct calculation)
+- Simplicity: 10/10 (utterly clear)
+- Solution Success: 10/10 (perfect)
+
+TOTAL: 25/40 (too simple to be interesting)
+
+========================================================================
+
+RIDDLE C3: The Three Boxes
+------------------------------------------------------------------------
+SETUP:
+Three boxes. One contains two gold coins. One contains two silver coins.
+One contains one gold and one silver. Labels are on each box but ALL LABELS
+ARE WRONG. You may draw ONE coin from ONE box.
+
+THE QUESTION: How do you determine the contents of ALL THREE boxes?
+
+HINT: Draw from the box labeled "Mixed."
+
+SOLUTION:
+Step 1: Labels are Gold-Gold, Silver-Silver, and Mixed. All wrong.
+Step 2: Draw from box labeled "Mixed." Since label is wrong, it's NOT mixed.
+        It contains either two gold or two silver.
+Step 3: Suppose you draw a gold coin. Then that box is Gold-Gold (not Mixed, label wrong).
+Step 4: The box labeled "Gold-Gold" is NOT Gold-Gold (label wrong).
+        The box labeled "Silver-Silver" is NOT Silver-Silver (label wrong).
+Step 5: Remaining options for labeled boxes:
+        - "Gold-Gold" label: contains Mixed or Silver-Silver
+        - "Silver-Silver" label: contains Mixed or Gold-Gold
+Step 6: We know actual Gold-Gold is the box labeled "Mixed" (from step 3).
+        We know actual Silver-Silver must be in a remaining box.
+        "Silver-Silver" label can't have Silver-Silver -> has Mixed.
+        "Gold-Gold" label has Silver-Silver.
+
+FINAL ANSWER:
+- Box labeled "Mixed" → Gold-Gold
+- Box labeled "Gold-Gold" → Silver-Silver
+- Box labeled "Silver-Silver" → Mixed
+
+VERIFICATION:
+- All labels wrong: "Mixed" has GG ✓, "GG" has SS ✓, "SS" has Mixed ✓
+- Only drew one coin to determine all ✓
+
+ARCHETYPE: Constraint Satisfaction
+SCORES:
+- Originality: 3/10 (classic puzzle)
+- Cleverness: 7/10 (elegant logic chain)
+- Simplicity: 9/10 (very clear setup)
+- Solution Success: 10/10 (complete, verified)
+
+TOTAL: 29/40
+
+========================================================================

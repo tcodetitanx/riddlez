@@ -1,0 +1,182 @@
+MUTATION D - SINGLE AHA MOMENT FOCUS
+Each puzzle designed around one central insight
+========================================================================
+
+RIDDLE D1: The Immune Witness
+------------------------------------------------------------------------
+SETUP:
+A crime was committed by exactly one of three suspects: A, B, or C.
+Each makes one statement:
+- A: "I didn't do it."
+- B: "A is telling the truth."
+- C: "B is lying."
+
+Exactly one person is lying. Who committed the crime?
+
+HINT: If exactly one lies, the other two tell truth.
+
+THE AHA MOMENT: The liar is the criminal.
+
+SOLUTION:
+Step 1: Exactly one person lies.
+Step 2: If A lies ("I didn't do it" is false), then A did it.
+        - B says "A tells truth" → B lies (A is lying). TWO liars. Contradiction.
+Step 3: If B lies ("A tells truth" is false), then A lies too. TWO liars. Contradiction.
+Step 4: If C lies ("B is lying" is false), then B tells truth.
+        - B says A tells truth, so A tells truth: "I didn't do it" → A innocent.
+        - C lied, so C is... the liar. But who's the criminal?
+
+Wait, the puzzle doesn't say the liar is the criminal. Let me re-read.
+
+REVISED: "Exactly one person is lying" — but we need to find the criminal.
+
+The statements:
+- A claims innocence
+- B vouches for A
+- C contradicts B
+
+If C is the only liar: B tells truth → A tells truth → A innocent.
+So A and B are innocent. C must be the criminal.
+
+Let's verify: C is criminal and liar.
+- A (innocent, tells truth): "I didn't do it" ✓
+- B (innocent, tells truth): "A tells truth" ✓
+- C (criminal, lies): "B is lying" is false → B tells truth ✓
+
+ANSWER: C committed the crime.
+
+VERIFICATION (test other cases):
+- If A is criminal: A lies, B says "A tells truth" → B lies too. TWO liars. ✗
+- If B is criminal: B lies about A. A tells truth (innocent), A says "I didn't do it" ✓
+  C says "B is lying" → C tells truth ✓. Only B lies. This works!
+
+WAIT - both B and C as criminals work!
+
+If B is criminal: A innocent/truthful, B lies about A, C truthful about B lying.
+Check: A says "I didn't do it" (true). B says "A tells truth" — is this a lie?
+If B lies, then A does NOT tell truth. But A is innocent and says truth. Contradiction!
+
+So B being criminal means B lies about A, but A IS telling truth. B's statement
+"A tells truth" would be TRUE if A tells truth. So B tells truth. But B is criminal...
+Can criminals tell truth? The puzzle just says "exactly one lies."
+
+If B is criminal but tells truth: then B is truthful criminal. A is truthful innocent.
+C says "B is lying" → C lies. TWO liars (B lying about something? No, B told truth.)
+
+Hmm, B as criminal: B truthfully says "A tells truth." But then C's statement "B is lying"
+is false, so C lies. Only C lies. This configuration:
+- A: innocent, truth-teller
+- B: CRIMINAL, truth-teller
+- C: innocent, liar
+
+This satisfies "exactly one liar" (C) but criminal is B.
+
+Now check: A says "I didn't do it" → true (B did it, not A). ✓
+B says "A tells truth" → true. ✓
+C says "B is lying" → false (B tells truth). C lies. ✓
+
+Both B and C work!? The puzzle has TWO solutions.
+
+PUZZLE BROKEN: Has two valid solutions (B or C as criminal).
+
+ARCHETYPE: Constraint Satisfaction + Self-Reference
+SCORES:
+- Originality: 4/10 (standard format)
+- Cleverness: 5/10 (but broken)
+- Simplicity: 9/10 (clear)
+- Solution Success: 3/10 (two solutions)
+
+TOTAL: 21/40
+
+========================================================================
+
+RIDDLE D2: The Penny Paradox
+------------------------------------------------------------------------
+SETUP:
+You have 100 pennies arranged in a row, all heads-up. You must flip coins
+according to this rule: On turn N, flip every Nth coin (coins at positions
+N, 2N, 3N, etc.).
+
+You take turns 1, 2, 3, ... up to turn 100.
+
+THE QUESTION: Which coins end up tails-up?
+
+HINT: How many times is each coin flipped?
+
+THE AHA MOMENT: A coin is flipped once for each of its divisors.
+
+SOLUTION:
+Step 1: Coin at position P is flipped on turn N if N divides P.
+Step 2: Number of flips for coin P = number of divisors of P.
+Step 3: Coin ends tails-up if flipped an ODD number of times.
+Step 4: Most numbers have divisors in pairs: if d divides n, so does n/d.
+Step 5: Exception: PERFECT SQUARES have an odd number of divisors (sqrt(n) pairs with itself).
+Step 6: Perfect squares from 1-100: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100.
+
+ANSWER: Coins at positions 1, 4, 9, 16, 25, 36, 49, 64, 81, 100 end up tails-up.
+(The 10 perfect squares.)
+
+VERIFICATION:
+- Coin 1: divisors = {1}. Flipped 1 time. Tails. ✓
+- Coin 4: divisors = {1,2,4}. Flipped 3 times. Tails. ✓
+- Coin 6: divisors = {1,2,3,6}. Flipped 4 times. Heads. ✓
+- Coin 9: divisors = {1,3,9}. Flipped 3 times. Tails. ✓
+- Coin 12: divisors = {1,2,3,4,6,12}. Flipped 6 times. Heads. ✓
+
+ARCHETYPE: Number Theory + Parity
+SCORES:
+- Originality: 3/10 (famous locker problem)
+- Cleverness: 9/10 (the perfect square insight is beautiful)
+- Simplicity: 8/10 (clear rules)
+- Solution Success: 10/10 (perfect, well-known, verified)
+
+TOTAL: 30/40
+
+========================================================================
+
+RIDDLE D3: The Reluctant Oracle
+------------------------------------------------------------------------
+SETUP:
+An oracle answers yes/no questions but charges based on her confidence.
+If she's 100% certain, the answer is free. If 50% certain, it costs $100.
+Price scales linearly: Price = $200 × (1 - confidence).
+
+You ask: "Will it rain tomorrow?"
+
+She says: "That'll be $50."
+
+THE QUESTION: What's the probability of rain tomorrow?
+
+HINT: Work backwards from the price.
+
+THE AHA MOMENT: The price encodes her confidence.
+
+SOLUTION:
+Step 1: Price = $200 × (1 - confidence)
+Step 2: $50 = $200 × (1 - confidence)
+Step 3: 0.25 = 1 - confidence
+Step 4: confidence = 0.75 = 75%
+
+Step 5: She's 75% confident in her answer. But we don't know if she said Yes or No!
+
+TWIST: The puzzle doesn't say what her answer was. But "confidence" means
+confidence in whatever answer she gives.
+
+If she says "Yes" with 75% confidence: P(rain) = 75%.
+If she says "No" with 75% confidence: P(rain) = 25%.
+
+The puzzle as stated is INCOMPLETE - we need to know her answer.
+
+REVISED PUZZLE: She says "Yes, $50."
+ANSWER: P(rain) = 75%.
+
+ARCHETYPE: Bayesian + Encoding
+SCORES:
+- Originality: 7/10 (novel mechanism)
+- Cleverness: 6/10 (straightforward once understood)
+- Simplicity: 7/10 (requires understanding confidence-price relationship)
+- Solution Success: 6/10 (needed to assume her answer)
+
+TOTAL: 26/40
+
+========================================================================

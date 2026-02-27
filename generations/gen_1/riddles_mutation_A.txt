@@ -1,0 +1,125 @@
+MUTATION A - SOLUTION VERIFICATION FOCUS
+Riddles generated with emphasis on verified, airtight solutions
+========================================================================
+
+RIDDLE A1: The Truthful Liar's Paradox
+------------------------------------------------------------------------
+SETUP:
+In a room are three people: a Knight (always tells truth), a Knave (always lies),
+and a Wildcard (can do either). You don't know who is who. You ask each person:
+"Are you the Wildcard?" All three answer "Yes."
+
+THE QUESTION: Who is the Wildcard?
+
+HINT: Consider what the Knight and Knave would actually say.
+
+SOLUTION:
+Step 1: The Knight always tells truth. If the Knight were the Wildcard, they'd
+truthfully say "Yes." If the Knight is NOT the Wildcard, they'd truthfully say "No."
+Step 2: The Knight said "Yes" -> The Knight IS the Wildcard? No, wait - the Knight
+CANNOT be the Wildcard and be a Knight simultaneously. The roles are exclusive.
+Step 3: REFRAME - the Knight must say "No" (they're not the Wildcard). But all
+three said "Yes." Therefore the Knight DID NOT say "Yes."
+
+Wait - all three said Yes. Let me re-analyze:
+- Knight says Yes -> Knight claims to be Wildcard -> This is true only if Knight IS Wildcard
+- But Knight role and Wildcard role are exclusive (there's one Knight, one Knave, one Wildcard)
+- If Knight says Yes, Knight is lying. But Knights don't lie. CONTRADICTION.
+
+The puzzle as stated is IMPOSSIBLE. No valid assignment exists where Knight says "Yes."
+
+VERIFICATION OF FAILURE:
+If person A is Knight: A says "Yes" means A IS Wildcard. Contradiction (can't be both).
+Same logic eliminates all configurations.
+
+STATUS: PUZZLE BROKEN - needs redesign
+
+========================================================================
+
+RIDDLE A2: The Synchronized Countdown
+------------------------------------------------------------------------
+SETUP:
+Three prisoners (A, B, C) are in separate rooms with no communication. A timer in
+each room shows a random number from 1-10 (different for each prisoner). They know:
+- All three timers count down by 1 each minute
+- When any timer hits 0, that prisoner must shout a number 1-3
+- If all three shout the same number, they're freed
+- They can strategize before being separated
+
+THE QUESTION: What strategy guarantees freedom?
+
+HINT: The starting number is information.
+
+SOLUTION:
+Step 1: Each prisoner knows their own starting number N (from 1-10).
+Step 2: Strategy: When your timer hits 0, shout (N mod 3) + 1.
+        - N=1,4,7,10 -> shout 2 (wait: 1 mod 3 = 1, +1 = 2; 4 mod 3 = 1, +1 = 2; etc)
+        - N=2,5,8 -> shout 3 (2 mod 3 = 2, +1 = 3)
+        - N=3,6,9 -> shout 1 (3 mod 3 = 0, +1 = 1)
+Step 3: But wait - the starting numbers are DIFFERENT. So N mod 3 values are different.
+        This strategy does NOT guarantee same shout.
+
+REVISED SOLUTION:
+The prisoners can't guarantee the same shout because their information differs.
+They need SHARED information.
+
+What's shared? The fact that they're counting down simultaneously.
+New strategy: Ignore your own timer. When YOU count minute 5 (arbitrary), shout 2.
+But they don't have synchronized clocks...
+
+VERIFICATION: With different starting numbers and no communication, synchronization
+is impossible. Each prisoner's "minute 0" occurs at a different time.
+
+STATUS: PUZZLE IMPOSSIBLE - no strategy can guarantee success
+
+========================================================================
+
+RIDDLE A3: The Inheritance Split
+------------------------------------------------------------------------
+SETUP:
+A father leaves $100 to three children (A, B, C) with this rule:
+- Each child secretly writes down a percentage (0-100%) they claim
+- If the total claimed exceeds 100%, nobody gets anything
+- Otherwise, each gets what they claimed
+- All children are rational and want to maximize their own share
+- They cannot communicate
+
+THE QUESTION: In Nash equilibrium, how much does each child claim?
+
+HINT: What happens if you claim just slightly more than others?
+
+SOLUTION:
+Step 1: In equilibrium, no child can improve by changing their claim unilaterally.
+Step 2: Suppose children claim (a, b, c) where a + b + c <= 100.
+Step 3: If a + b + c < 100, any child can increase claim and get more. Not equilibrium.
+Step 4: If a + b + c = 100, what if one increases? Total exceeds 100, all get 0.
+Step 5: Equilibrium condition: Each child claims exactly 1/3 (33.33...%).
+        - If total is 100%, no one can increase without triggering 0.
+        - If symmetric, each claims 100/3 = 33.33%.
+
+VERIFICATION:
+- Each claims 33.33%, total = 100%. Each gets $33.33.
+- If A increases to 34%, total = 100.33% > 100, A gets $0. Worse off.
+- If A decreases to 32%, A gets $32 instead of $33.33. Worse off.
+- Equilibrium confirmed.
+
+Alternative check: What about asymmetric equilibria?
+- If (50, 25, 25): Can person A deviate? If A claims 50.01%, total > 100, A gets 0. No.
+  Can B deviate? If B claims 25.01%, total > 100, B gets 0. No.
+  This is ALSO an equilibrium!
+
+MULTIPLE EQUILIBRIA EXIST: Any (a, b, c) with a+b+c = 100 is an equilibrium.
+
+FINAL ANSWER: The symmetric equilibrium is (33.33, 33.33, 33.33), but infinitely many
+equilibria exist. Each child claims such that the total exactly equals 100%.
+
+ARCHETYPE: Game Theory (pure)
+SCORES (self-assessment):
+- Originality: 5/10 (standard game theory)
+- Cleverness: 6/10 (the "multiple equilibria" insight is nice)
+- Simplicity: 9/10 (very clear setup)
+- Solution Success: 8/10 (complete and verified)
+
+TOTAL: 28/40
+
+========================================================================
