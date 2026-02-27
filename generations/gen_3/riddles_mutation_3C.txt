@@ -1,0 +1,114 @@
+MUTATION 3C - PERFECT SIMPLICITY
+One-sentence setups with deep solutions
+========================================================================
+
+RIDDLE 3C1: The Last Number
+------------------------------------------------------------------------
+SETUP:
+Two players take turns saying a number from 1-10. The first player to say a
+number that has been said before loses.
+
+THE QUESTION: Who wins with perfect play, and what's the strategy?
+
+SOLUTION:
+Step 1: There are 10 unique numbers. Each turn uses up one number.
+Step 2: Maximum turns = 10 (all numbers said once).
+Step 3: Turn 1: Player 1 says a number. 9 remain.
+        Turn 2: Player 2 says a number. 8 remain.
+        ...
+        Turn 10: Player 2 (if even turns) or Player 1 (if odd).
+
+Step 4: 10 turns total. Turn 10 is... let's see:
+        Turn 1 (P1), Turn 2 (P2), Turn 3 (P1), ..., Turn 10 (P2).
+        Player 2 takes even turns. Turn 10 = P2.
+
+Step 5: On turn 10, only 1 number remains (if no repeats yet). P2 says it.
+        On turn 11, P1 must repeat. P1 loses.
+
+Step 6: But wait - the game ends when someone repeats, not after 10 turns.
+        If both play optimally (never repeating until forced), the 11th turn is the loss.
+
+ANSWER: Player 1 loses. With 10 numbers and P1 starting, P2 makes the last safe move.
+
+VERIFICATION:
+- Optimal play: never repeat until forced.
+- 10 unique numbers. After 10 turns, all used. Turn 11 forces a repeat.
+- Turn 11 is P1's turn (odd). P1 must repeat. P1 loses. ✓
+
+ARCHETYPE SCORES:
+- Originality: 5/10 (counting game is known)
+- Cleverness: 7/10 (parity of turns is simple insight)
+- Simplicity: 10/10 (crystal clear)
+- Solution Success: 10/10 (perfect)
+
+TOTAL: 32/40
+
+========================================================================
+
+RIDDLE 3C2: The Honest Liar
+------------------------------------------------------------------------
+SETUP:
+A person says: "Everything I say is a lie."
+
+THE QUESTION: Is this statement true or false?
+
+SOLUTION:
+Step 1: If true: Everything they say is a lie. But this statement is true. Contradiction!
+Step 2: If false: Not everything they say is a lie (some statements are true).
+        This statement being false means they DON'T always lie. Consistent!
+
+Step 3: The statement is FALSE. They're lying when they say they always lie.
+        They sometimes tell truth.
+
+ANSWER: False. The speaker is lying about always lying.
+
+INSIGHT: Self-referential statements can be consistently false but not consistently true.
+         "This statement is false" = paradox.
+         "Everything I say is false" = resolvable (it's false).
+
+The difference: "This statement" is directly self-referential.
+               "Everything I say" is about a set that INCLUDES this statement.
+
+ARCHETYPE SCORES:
+- Originality: 3/10 (classic paradox)
+- Cleverness: 7/10 (resolution is satisfying)
+- Simplicity: 10/10 (one sentence)
+- Solution Success: 10/10 (clean)
+
+TOTAL: 30/40
+
+========================================================================
+
+RIDDLE 3C3: The Double Bind
+------------------------------------------------------------------------
+SETUP:
+You must answer this question with Yes or No. If you answer correctly, you get $100.
+If you answer wrong, you lose $50.
+
+THE QUESTION: Will you answer "No" to this question?
+
+SOLUTION:
+Step 1: If you answer "Yes": You're saying you WILL answer No. But you answered Yes.
+        Contradiction! "Yes" is wrong. You lose $50.
+
+Step 2: If you answer "No": You're saying you will NOT answer No. But you just answered No.
+        Contradiction! "No" is wrong. You lose $50.
+
+Step 3: BOTH answers are wrong. There's no winning!
+
+ANSWER: Neither answer is correct. You lose $50 regardless.
+
+THE INSIGHT: Some questions have no correct answer by construction. The question
+creates a double bind where any response contradicts itself.
+
+This is related to the Paradox of the Court (Protagoras paradox).
+
+ARCHETYPE SCORES:
+- Originality: 6/10 (self-referential questions are known)
+- Cleverness: 8/10 (the "no winning move" insight is nice)
+- Simplicity: 10/10 (ultra-clear)
+- Solution Success: 10/10 (perfectly analyzed)
+
+TOTAL: 34/40
+
+========================================================================

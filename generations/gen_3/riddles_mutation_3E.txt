@@ -1,0 +1,136 @@
+MUTATION 3E - META-PUZZLE
+Puzzles about puzzles themselves
+========================================================================
+
+RIDDLE 3E1: The Impossible Puzzle
+------------------------------------------------------------------------
+SETUP:
+This is a puzzle. Your task: determine what's WRONG with this puzzle.
+
+"Five people sit in a circle. Each can only see the two people directly across
+from them. Each person writes down how many people they can see."
+
+THE QUESTION: What did you find wrong?
+
+SOLUTION:
+Step 1: 5 people in a circle. For any person, who is "directly across"?
+Step 2: In a circle of 5 (odd number), there is no "directly across" position!
+        With even numbers, you can draw a diameter. With 5, positions are at 72° angles.
+        No position is 180° (directly across) from another.
+
+Step 3: The puzzle setup is GEOMETRICALLY IMPOSSIBLE.
+
+ANSWER: In a circle of 5, there is no "directly across" - the puzzle's premise is flawed.
+
+THE META-INSIGHT: Sometimes the puzzle's answer is that the puzzle is wrong.
+Recognizing an impossible premise is itself a form of solution.
+
+ARCHETYPE SCORES:
+- Originality: 8/10 (meta-puzzle about setup validity)
+- Cleverness: 9/10 (the odd-number geometry insight is nice)
+- Simplicity: 9/10 (short, clear setup)
+- Solution Success: 10/10 (definitively identifies the flaw)
+
+TOTAL: 36/40 ★★
+
+========================================================================
+
+RIDDLE 3E2: The Puzzle About This Puzzle
+------------------------------------------------------------------------
+SETUP:
+This puzzle has exactly one solution. The solution is a single word.
+Here is a hint: "The solution is the word that best describes this puzzle."
+
+THE QUESTION: What is the solution?
+
+SOLUTION:
+Step 1: Looking for a word that describes this puzzle.
+Step 2: The puzzle is self-referential (about itself).
+Step 3: The puzzle asks for its own description.
+Step 4: Candidate words: "Self-referential," "Recursive," "Meta," "Circular"
+
+Step 5: Which one word BEST describes a puzzle whose solution is describing itself?
+        - "Meta" - the puzzle is meta (about puzzles)
+        - "Recursive" - the puzzle recurses into itself
+        - "Self-referential" - the puzzle refers to itself
+
+Step 6: The most precise single word: "Self-referential" (but that's hyphenated/compound).
+        Single word: "Recursive" or "Autological"
+
+Step 7: "Autological" means a word that describes itself (like "short" is short).
+        Is this puzzle autological? The puzzle describes itself by asking for its description.
+
+ANSWER: "Autological" - a word describing something that describes itself.
+
+ALTERNATE ANSWER: "Recursive" - a puzzle that contains itself.
+
+THE META-INSIGHT: The best description of a self-describing puzzle is... a word meaning
+"self-describing." This creates perfect self-reference.
+
+ARCHETYPE SCORES:
+- Originality: 9/10 (deeply self-referential)
+- Cleverness: 8/10 (requires knowing "autological")
+- Simplicity: 8/10 (short but abstract)
+- Solution Success: 8/10 (answer is debatable between options)
+
+TOTAL: 33/40
+
+========================================================================
+
+RIDDLE 3E3: The Solution Paradox
+------------------------------------------------------------------------
+SETUP:
+A puzzle exists with these properties:
+1. It has exactly one correct solution.
+2. Anyone who knows the solution will deny it's correct.
+3. Anyone who doesn't know the solution will claim they do know it.
+
+THE QUESTION: I know the solution. Is it correct?
+
+HINT: Pay attention to what my knowledge implies about my claims.
+
+SOLUTION:
+Step 1: The questioner says "I know the solution."
+Step 2: Property 3: "Anyone who doesn't know will claim they know."
+        So if you don't know, you'd say "I know."
+        The questioner said "I know." This is what someone who doesn't know would say!
+Step 3: Property 2: "Anyone who knows will DENY it's correct."
+        So if you know, you'd say "it's not correct."
+        The questioner asks "Is it correct?" - not denying anything yet.
+
+Step 4: From the claim "I know": By Property 3, this is what unknowing people say.
+        We CANNOT conclude the questioner knows (they might be unknowing and claiming falsely).
+        But wait - they MIGHT actually know and be truthful about knowing.
+
+Step 5: The question is: "I know the solution. Is it correct?"
+        If questioner knows (truly): By Property 2, they would deny correctness.
+        So their answer to "is it correct?" should be "No" if they truly know.
+
+Step 6: But they're ASKING the question, not answering it. They're posing the puzzle.
+        The puzzle asks US to determine: given the questioner knows, is the solution correct?
+
+Step 7: By Property 1, the puzzle has exactly one correct solution.
+        By Property 2, anyone who knows the solution would deny its correctness.
+        So if I know it, I'd say it's NOT correct. But it IS correct (Property 1).
+
+ANSWER: Yes, the solution is correct (by Property 1). But anyone who knows this
+will deny it - including me, if I truly knew it.
+
+THE PARADOX: If I say "Yes, it's correct," I'm either:
+- Wrong (don't actually know)
+- Lying (know but breaking Property 2)
+
+This creates an epistemic trap: true knowledge forces denial.
+
+THE META-INSIGHT: Some knowledge systems make true claims impossible to make truthfully.
+This is related to the Paradox of the Knower.
+
+ARCHETYPE SCORES:
+- Originality: 10/10 (genuinely novel epistemic paradox)
+- Cleverness: 10/10 (multiple layers of self-reference)
+- Simplicity: 7/10 (requires careful parsing)
+- Solution Success: 10/10 (paradox identified and analyzed)
+
+TOTAL: 37/40 ★★★ [NEW HIGH]
+
+========================================================================

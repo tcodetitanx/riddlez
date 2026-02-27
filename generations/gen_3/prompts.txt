@@ -1,0 +1,72 @@
+GENERATION 3 - PUSHING TOWARD 40/40
+====================================
+Goal: Break through 35/40 ceiling to reach 10/10 in all categories
+
+Strategy: Each mutation targets the gap between 9/10 and 10/10 in different areas.
+
+================================================================================
+MUTATION 3A: Maximum Originality
+================================================================================
+"Create a puzzle mechanism that has NEVER appeared in any classic puzzle.
+
+Requirements:
+- The core mechanic must be genuinely unprecedented
+- Not a combination of known mechanics - a NEW mechanic
+- Must still be logically valid and solvable
+
+Possible directions:
+- Temporal loops where future affects past
+- Quantum-inspired superposition of answers
+- Recursive meta-levels (puzzle about solving puzzles)
+- New mathematical structures not yet exploited"
+
+================================================================================
+MUTATION 3B: Maximum Cleverness (Paradigm Shift)
+================================================================================
+"Create a puzzle whose solution changes how you think.
+
+The 'aha moment' should be:
+- Something you couldn't have conceived before solving it
+- A principle applicable beyond this specific puzzle
+- Counterintuitive in a way that reveals a deeper truth
+
+Target: 'Reality bent' level of insight (Category 4 from Architecture of Puzzlement)"
+
+================================================================================
+MUTATION 3C: Perfect Simplicity
+================================================================================
+"Create a puzzle explainable in ONE sentence with a solution requiring 10+ minutes.
+
+The setup must be:
+- Immediately graspable by anyone
+- Containing deep, non-obvious implications
+- Like a well-disguised iceberg - simple surface, massive depth
+
+Example format: 'If [simple condition], what is [simple question]?'"
+
+================================================================================
+MUTATION 3D: Hybrid Excellence
+================================================================================
+"Combine the best patterns from Gen 2:
+1. Self-fulfilling predictions (from 2A1)
+2. Constraint collapse to zero/all (from 2E3)
+3. Parity forcing (from 2D1)
+4. Game-theoretic equilibrium (from 2E2)
+
+The puzzle must use AT LEAST THREE of these patterns simultaneously,
+with the patterns reinforcing each other rather than just coexisting."
+
+================================================================================
+MUTATION 3E: Meta-Puzzle
+================================================================================
+"Create a puzzle ABOUT puzzles themselves.
+
+Examples:
+- A puzzle whose answer is 'this puzzle is unsolvable'
+- A puzzle where the question is part of the solution
+- A puzzle that requires understanding puzzle structure to solve
+- A puzzle where you must identify what's WRONG with the puzzle
+
+The meta-layer must add genuine intellectual depth, not just gimmick."
+
+================================================================================

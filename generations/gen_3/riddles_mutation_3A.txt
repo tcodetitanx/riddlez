@@ -1,0 +1,237 @@
+MUTATION 3A - MAXIMUM ORIGINALITY
+Puzzles with genuinely unprecedented mechanisms
+========================================================================
+
+RIDDLE 3A1: The Forgetful Gods
+------------------------------------------------------------------------
+SETUP:
+Three gods sit in a row. Each knows everything EXCEPT the answer to one specific
+question (different for each god). You may ask any god any yes/no question.
+However, a god's answer might be WRONG if your question is the one thing they
+don't know - and they won't know they're wrong.
+
+The gods never lie, but they may be mistaken.
+
+You know:
+- God 1 doesn't know if God 2 is ever mistaken
+- God 2 doesn't know if God 3 is ever mistaken
+- God 3 doesn't know if God 1 is ever mistaken
+
+THE QUESTION: With exactly 3 questions, can you determine which god doesn't know what?
+
+HINT: A god's answer about another god's knowledge reveals something.
+
+SOLUTION:
+Step 1: Ask God 1: "Does God 2 ever give mistaken answers?"
+        - God 1 doesn't know if God 2 is ever mistaken (God 1's blind spot).
+        - God 1 will answer based on their lack of knowledge. They'll answer... randomly? No.
+        - Since God 1 genuinely doesn't know, they can't truthfully say Yes or No.
+
+PROBLEM: A god who doesn't know can't answer. But they "never lie" - so what do they do?
+
+Let me reframe: A god answers their best knowledge. If their question IS their blind spot,
+they give an answer that MIGHT be wrong (they believe it's true but it isn't).
+
+Step 2: Ask God 1: "Is God 2's blind spot about God 3?"
+        - God 1 KNOWS everything except info about God 2's mistakes.
+        - God 1 knows God 2's blind spot. Answer: truthful.
+
+Hmm, this is getting circular. Let me redesign.
+
+REDESIGNED SETUP:
+Each god is omniscient EXCEPT for one color they cannot perceive.
+- God 1 cannot see red
+- God 2 cannot see blue
+- God 3 cannot see green
+
+A ball is placed in front of them. It's one solid color.
+Each god tells you what color they see:
+- If the ball is their blind color, they see nothing and say "I see nothing."
+- Otherwise, they correctly name the color.
+
+THE QUESTION: The gods say: "Blue," "I see nothing," "Blue." What color is the ball?
+
+Step 1: God 1 says "Blue." God 1 can't see red. So the ball is NOT red (God 1 sees it).
+Step 2: God 2 says "Nothing." God 2 can't see blue. So the ball IS blue (God 2's blind spot).
+Step 3: God 3 says "Blue." God 3 can't see green. This confirms blue (God 3 sees blue).
+ANSWER: Blue.
+
+VERIFICATION: Ball is blue. God 1 (red-blind) sees blue. God 2 (blue-blind) sees nothing.
+God 3 (green-blind) sees blue. ✓
+
+But this is too simple. Let me add complexity:
+
+ENHANCED PUZZLE: The gods only say their responses ONCE, simultaneously. You don't know
+which god has which blind spot. Given the three responses, deduce the ball's color AND
+which god is blind to which color.
+
+Responses: "Blue," "I see nothing," "Green" (from gods 1, 2, 3 in order)
+
+Step 1: One god sees nothing → the ball IS that god's blind color.
+Step 2: Two gods see colors. If they see different colors, that's impossible (one ball).
+        "Blue" and "Green" are different! Contradiction?
+
+Step 3: This means one of them is WRONG - they're seeing their non-blind color as something else?
+        No, gods see correctly if not blind.
+
+REVISED: The puzzle setup is breaking. Let me make it work:
+
+If ball is Blue: Blue-blind god sees nothing. Others see Blue.
+If responses are "Blue, Nothing, Green": Blue-seer, Blue-blind, Green-seer.
+But one ball can't be both Blue and Green!
+
+The puzzle as enhanced is broken. Original version works:
+
+FINAL PUZZLE: Three gods, three blind spots (red, blue, green), one ball, three responses.
+Given responses match the simple version, the puzzle works.
+
+ARCHETYPE SCORES:
+- Originality: 8/10 (selective omniscience is novel)
+- Cleverness: 6/10 (solution is straightforward once understood)
+- Simplicity: 6/10 (complex setup)
+- Solution Success: 7/10 (works in simple form)
+
+TOTAL: 27/40
+
+========================================================================
+
+RIDDLE 3A2: The Probability Prisoner
+------------------------------------------------------------------------
+SETUP:
+You're told you'll be executed with probability P, where P is the fraction of
+execution-predicters (people who predict their own execution) who are right.
+
+You must predict: will you be executed? Your prediction affects P!
+
+Currently, 100 people have predicted before you:
+- 50 predicted "Yes" (executed), and 40 of them were right (80% accurate)
+- 50 predicted "No" (not executed), and 30 of them were right (60% accurate)
+
+THE QUESTION: What should you predict to minimize your chance of execution?
+
+HINT: Calculate P for each prediction you could make.
+
+SOLUTION:
+Step 1: Current data: 40 correct "Yes" predictions, 30 correct "No" predictions.
+        70 correct predictions total out of 100. P = 70% currently.
+
+Step 2: If you predict "Yes" (executed):
+        - If you're right: 41 correct "Yes", 30 correct "No". 71/101 = 70.3% = new P.
+          You're executed with probability 70.3%.
+        - If you're wrong: 40 correct "Yes", 30 correct "No". 70/101 = 69.3%.
+          But you're wrong, so you're NOT executed. Contradiction? Let's think...
+
+Step 3: This is self-referential! Your accuracy affects P, which determines your execution,
+        which determines your accuracy.
+
+Step 4: If you predict "Yes":
+        - Case: You're executed. You were right. New P = 71/101 = 70.3%.
+        - Case: You're not executed. You were wrong. New P = 70/101 = 69.3%.
+        Your execution probability was P... but P depends on outcome. Circular!
+
+Step 5: Fixed point: Let p = P(you're executed | you predict Yes).
+        If executed (prob p): new P = 71/101, and your execution prob should equal new P? No...
+
+Actually, let me re-read: "executed with probability P, where P is fraction correct."
+
+So P is determined AFTER all predictions, based on accuracy. But your prediction is part of that!
+
+SIMPLIFICATION:
+Let's say P is set AFTER you make your prediction AND your fate is determined.
+If you predict Yes and are executed: P = 71/101 ≈ 70.3%.
+If you predict Yes and aren't executed: P = 70/101 ≈ 69.3%.
+
+But your execution is determined BY P! Circular dependence.
+
+RESOLUTION: The only consistent outcomes are fixed points.
+
+Fixed point analysis:
+If P = 71/101: You're executed with prob 71/101 IF that's self-consistent.
+If executed: correct, contributes to numerator. P = 71/101. ✓
+If not executed: incorrect, P = 70/101 ≠ 71/101. Not consistent with P = 71/101.
+
+So IF P = 71/101, you must be executed. This is self-consistent.
+
+ANSWER: If you predict "Yes," you will be executed (fixed point at ~70%).
+        If you predict "No," what happens?
+
+If you predict No and are not executed: correct. P = 71/101 (40+31 correct).
+If you predict No and are executed: incorrect. P = 70/101 (40+30 correct).
+
+For P = 71/101 and you predicted No, not executed: consistent!
+For P = 70/101 and you predicted No, executed: is being executed at 70% consistent?
+        Not deterministically. Probabilistically, 70% execution is a random outcome.
+
+This is very complex.
+
+SIMPLIFIED ANSWER: Predict "No" to minimize execution.
+Reasoning: Predicting "No" gives you 30% survival minimum (correct "No" sayers survived).
+Predicting "Yes" gives you 0% survival minimum (you're predicting death).
+
+ARCHETYPE SCORES:
+- Originality: 9/10 (self-referential probability is novel)
+- Cleverness: 8/10 (fixed point analysis is interesting)
+- Simplicity: 4/10 (very confusing)
+- Solution Success: 5/10 (incomplete resolution)
+
+TOTAL: 26/40
+
+========================================================================
+
+RIDDLE 3A3: The Uncountable Room
+------------------------------------------------------------------------
+SETUP:
+A room contains infinitely many boxes, one for each real number between 0 and 1.
+Each box is labeled with its number and contains either a gold coin or nothing.
+
+You may open any finite number of boxes. You win if at least one opened box has gold.
+
+A demon tells you: "Exactly half of the boxes have gold. The gold boxes are distributed
+so that in any interval [a, b], the fraction with gold is exactly 1/2."
+
+THE QUESTION: Can you guarantee finding gold, and if so, how?
+
+HINT: Think about measure theory.
+
+SOLUTION:
+Step 1: There are uncountably many boxes. You can open finitely many.
+Step 2: "Half have gold" and "every interval has half gold" - this is the uniform
+        distribution of gold over [0,1].
+Step 3: Probability of gold in any single box: Well, each box is a single point.
+        Points have measure zero in continuous distributions. P(gold in specific box) = ?
+
+Step 4: Actually, "exactly half have gold" means the set of gold boxes has measure 1/2.
+        "Every interval has half gold" means the density is 1/2 everywhere.
+
+Step 5: If you pick any specific box (say, box 0.5), the probability it has gold is...
+        actually undefined at points. But we can say: pick randomly from [0,1],
+        probability = 1/2.
+
+Step 6: But you're not picking randomly - you're picking specifically!
+        If you open box 0.5, either it has gold or it doesn't. The demon's statement
+        gives you no information about SPECIFIC boxes, only about intervals.
+
+Step 7: ANY finite set of boxes has measure zero. The demon's guarantee about intervals
+        says nothing about finite sets of points.
+
+ANSWER: You CANNOT guarantee finding gold. Opening any finite number of boxes gives
+        no guarantee, because a measure-1/2 set can completely avoid any given finite set.
+
+VERIFICATION:
+Consider a specific construction: gold is in [0, 0.5] only.
+This satisfies "half have gold" but NOT "every interval has half gold."
+
+With uniform density, opening boxes at 0.1, 0.2, ..., 0.9 gives expected 4.5 gold boxes,
+but no guarantee (bad luck is possible, though vanishingly unlikely).
+
+The puzzle explores the limits of probability with infinite sets.
+
+ARCHETYPE SCORES:
+- Originality: 9/10 (measure theory puzzle is unusual)
+- Cleverness: 7/10 (insight is mathematical)
+- Simplicity: 5/10 (requires advanced math intuition)
+- Solution Success: 8/10 (answer is clear: no guarantee)
+
+TOTAL: 29/40
+
+========================================================================

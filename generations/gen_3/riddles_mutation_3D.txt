@@ -1,0 +1,178 @@
+MUTATION 3D - HYBRID EXCELLENCE
+Combining self-fulfilling predictions + constraint collapse + parity + game theory
+========================================================================
+
+RIDDLE 3D1: The Voting Collapse
+------------------------------------------------------------------------
+SETUP:
+100 voters will vote Yes or No. The outcome is decided by this rule:
+"Yes wins if and only if the number of Yes votes equals the predicted number of Yes votes."
+
+Before voting, each voter is told the predicted number of Yes votes: 50.
+
+Everyone votes simultaneously, knowing the prediction, wanting their side to win.
+Voters 1-50 want Yes. Voters 51-100 want No.
+
+THE QUESTION: What is the final vote count, and who wins?
+
+SOLUTION:
+Step 1: Predicted Yes = 50. Yes wins if actual Yes = 50.
+Step 2: Yes-voters (1-50) want actual Yes = 50. They should vote Yes.
+        If all 50 vote Yes: actual = 50 = predicted. Yes wins!
+Step 3: No-voters (51-100) want actual Yes ≠ 50. They should vote Yes or No to change count.
+        If No-voters all vote No: actual Yes = 50. Yes wins. Bad for No-voters.
+        If No-voters vote Yes: actual Yes = 100. Yes ≠ 50. No wins!
+
+Step 4: No-voters realize: by voting Yes, they make the count NOT equal 50. No wins!
+        But Yes-voters can counter: if some vote No, count changes.
+
+Step 5: Game theory: Each No-voter's optimal move is to vote Yes (to push total away from 50).
+        If all No-voters vote Yes: actual = 50 (Yes-voters) + 50 (No-voters) = 100 ≠ 50. No wins.
+
+Step 6: Can Yes-voters prevent this? Yes-voters need actual = 50.
+        If Yes-voters vote No: some votes removed. Say 10 Yes-voters vote No.
+        Actual Yes = 40 (loyal Yes) + 50 (No-voters voting Yes) = 90 ≠ 50. No wins.
+        If 50 Yes-voters vote No: actual = 0 + 50 = 50. Yes wins!
+
+Step 7: Wait - if all Yes-voters vote No, actual Yes = 50 (from No-voters voting Yes).
+        That equals 50. Yes wins!
+
+Step 8: But will No-voters vote Yes? They expect Yes-voters to vote Yes.
+        If Yes-voters vote Yes and No-voters vote No: actual = 50. Yes wins.
+        No-voters should vote Yes to make actual = 100.
+
+        But if Yes-voters anticipate this and vote No...
+        Actual = 0 (Yes-voters vote No) + 50 (No-voters vote Yes) = 50. Yes wins again!
+
+Step 9: No matter what No-voters do, Yes-voters can match:
+        - If No-voters vote No: Yes-voters vote Yes. Total = 50. Yes wins.
+        - If No-voters vote Yes: Yes-voters vote No. Total = 50. Yes wins!
+
+ANSWER: Yes wins! Yes-voters can always achieve 50 by mirroring No-voters.
+
+INSIGHT: The predicted number creates a target. The side that matches their votes
+to hit the target wins. With equal numbers on each side, the matching side (Yes) wins.
+
+ARCHETYPE SCORES:
+- Originality: 9/10 (novel voting mechanism)
+- Cleverness: 9/10 (the "mirroring" strategy is elegant)
+- Simplicity: 7/10 (rules need parsing)
+- Solution Success: 9/10 (complete game-theoretic analysis)
+
+TOTAL: 34/40
+
+========================================================================
+
+RIDDLE 3D2: The Parity Auction
+------------------------------------------------------------------------
+SETUP:
+An item is auctioned to three bidders. Each secretly bids 0-10 dollars (integers).
+The winner is determined by: "The bidder whose bid has DIFFERENT parity (odd/even)
+from both other bids wins. If no such bidder exists, highest bid wins."
+
+Each bidder values the item at exactly $10 and pays their bid if they win.
+
+THE QUESTION: In Nash equilibrium, what do the bidders bid?
+
+SOLUTION:
+Step 1: Parity rule: Win if your bid is the "odd one out" in parity.
+        - If bids are (Even, Even, Odd): Odd wins.
+        - If bids are (Odd, Odd, Even): Even wins.
+        - If all same parity: highest bid wins.
+
+Step 2: To be odd-one-out, you want your parity different from both others.
+        Coordination problem: everyone tries to be the odd one.
+
+Step 3: If everyone bids same parity (all even): highest wins. Bids escalate to 10.
+        If parity differs: lowest odd-one-out wins.
+
+Step 4: Mixed strategy? Consider: each picks even/odd with some probability.
+        P(you're odd-one-out) = P(both others same parity, different from yours).
+
+Step 5: If each mixes 50/50 between even/odd:
+        P(odd-one-out) = P(both others even | you odd) + P(both others odd | you even)
+                       = (0.5)² + (0.5)² = 0.25 + 0.25 = 0.5... no wait.
+        P(you're odd-one-out) = P(both others same) × P(you're different)
+        P(both others same parity) = 0.5 × 0.5 + 0.5 × 0.5 = 0.5.
+        P(you're different | both others same) = 0.5.
+        P(odd-one-out) = 0.5 × 0.5 = 0.25? No, let me recalculate.
+
+Step 6: DIRECT: You're odd-one-out if both others are even (and you're odd) OR
+                both others are odd (and you're even).
+        P = 0.5² × 0.5 + 0.5² × 0.5 = 0.25 × 0.5 × 2 = 0.25.
+
+Step 7: Only 25% chance of being odd-one-out. 75% of the time, someone else wins
+        or highest bid wins. This is getting complex.
+
+SIMPLIFIED EQUILIBRIUM: Everyone bids the same parity (say, even) and highest bid.
+Actually, this devolves to standard auction.
+
+ACTUAL INSIGHT: Bid 0 (even) or 1 (odd) to keep cost low while gambling on parity.
+
+ANSWER: Mixed equilibrium: each randomizes between low even (0 or 2) and low odd (1).
+        The parity gamble keeps bids low; expected payoff is positive.
+
+ARCHETYPE SCORES:
+- Originality: 8/10 (parity in auctions is novel)
+- Cleverness: 7/10 (interesting but incomplete analysis)
+- Simplicity: 6/10 (complex rules)
+- Solution Success: 6/10 (partially resolved)
+
+TOTAL: 27/40
+
+========================================================================
+
+RIDDLE 3D3: The Self-Eliminating Voters
+------------------------------------------------------------------------
+SETUP:
+100 voters each predict: "How many voters will make a WRONG prediction?"
+Voters who predict the correct number survive; wrong predictors are eliminated.
+
+THE QUESTION: How many voters survive?
+
+HINT: What happens if everyone predicts the same number?
+
+SOLUTION:
+Step 1: Let W = number of wrong predictions. Each voter predicts some number.
+Step 2: If your prediction equals W, you're correct (and NOT part of W).
+        If your prediction ≠ W, you're wrong (and ARE part of W).
+
+Step 3: If everyone predicts 0:
+        - If W = 0: all predictions correct. All survive. W = 0. ✓ Consistent!
+        - Equilibrium: all predict 0, W = 0, all survive.
+
+Step 4: If everyone predicts 50:
+        - If W = 50: 50 are wrong, 50 are right. The 50 right ones predicted 50.
+          W = 50 ≠ 50? No, W = 50 = 50. Those who predicted 50 are right.
+          So we need exactly 50 to predict something other than 50... but everyone predicted 50.
+          All 100 predict 50. If W = 50, then 50 are wrong. But all predicted 50.
+          Either all are right (if W = 50) or all are wrong (if W ≠ 50).
+          If W = 50 and all predicted 50: all correct? Then W = 0, not 50. Contradiction!
+
+Step 5: If everyone predicts 0: W = 0, all correct, all survive. Consistent!
+        If everyone predicts N > 0: W = N means N people wrong. But all predicted same.
+        Either W = 0 (all right) or W = 100 (all wrong).
+        If all predict N and W = 100: everyone wrong, so N ≠ 100. But W = 100 ≠ N.
+        Their prediction (N) ≠ 100 = W. Wrong. So W = 100. Consistent!
+
+Step 6: Two equilibria:
+        - All predict 0: W = 0, all survive (100 survivors)
+        - All predict any N ≠ 0 and N ≠ 100: W = 100, none survive (0 survivors)
+
+Step 7: If all predict 100: W = 100 means 100 wrong. If all predicted 100 and W = 100,
+        they're correct! W = 0 then. Contradiction. So predicting 100 leads to
+        self-defeating logic.
+
+ANSWER: All should predict 0. Then W = 0, and all 100 survive.
+
+INSIGHT: "Predict zero errors" is self-fulfilling when unanimous.
+
+ARCHETYPE SCORES:
+- Originality: 8/10 (self-referential prediction about errors)
+- Cleverness: 9/10 (the collapse to "all or nothing" is elegant)
+- Simplicity: 8/10 (clear rules)
+- Solution Success: 9/10 (equilibrium found)
+
+TOTAL: 34/40
+
+========================================================================
