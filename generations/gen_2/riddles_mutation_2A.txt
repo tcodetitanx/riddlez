@@ -1,0 +1,188 @@
+MUTATION 2A - BAYESIAN + SELF-REFERENCE FUSION
+Puzzles where observation/prediction affects the thing being observed/predicted
+========================================================================
+
+RIDDLE 2A1: The Self-Fulfilling Survey
+------------------------------------------------------------------------
+SETUP:
+A pollster asks 1000 people: "Will more than 500 people answer 'Yes' to this question?"
+Each person answers privately. Each person is told: "Your answer doesn't affect the
+outcome - we've already surveyed the other 999 people."
+
+But here's the catch: everyone is told this simultaneously. No one's answer is
+actually fixed yet.
+
+THE QUESTION: If everyone reasons rationally about what to answer, what happens?
+
+HINT: Consider what "rational" means when your answer depends on others' answers.
+
+SOLUTION:
+Step 1: Each person's rational answer depends on their belief about the final count.
+Step 2: If I believe >500 will say Yes, my rational answer is... to agree? Let's see.
+        - If I answer "Yes" (expecting >500 Yes), I'm predicting correctly IF >500 say Yes.
+        - But my goal isn't just to predict correctly - I'm ASKED what I PREDICT.
+        - If I predict "Yes" and I'm among the >500, I'm correct.
+
+Step 3: Symmetric equilibrium: If everyone says "Yes," count = 1000 > 500.
+        Prediction "Yes" is correct. But they predicted >500 would say YES to the question.
+        Wait, the question asks if >500 will answer "Yes." If all answer "Yes," yes >500 did.
+        So answering "Yes" = predicting "Yes" which is correct. ✓
+
+Step 4: Alternative equilibrium: If everyone says "No," count = 0 < 500.
+        Prediction "No" is correct (not more than 500 said Yes). ✓
+
+Step 5: BOTH are stable equilibria!
+        - All-Yes: Everyone predicts >500 say Yes, 1000 say Yes, prediction correct.
+        - All-No: Everyone predicts ≤500 say Yes, 0 say Yes, prediction correct.
+
+Step 6: Mixed: If 500 say Yes, 500 say No. Those who said Yes are wrong. Those who
+        said No are correct. Not stable (Yes-sayers want to switch).
+
+ANSWER: Two equilibria exist: unanimous "Yes" or unanimous "No."
+The question creates its own answer through collective belief.
+
+VERIFICATION:
+- All Yes: 1000 Yes, prediction ">500 will say Yes" is true. ✓
+- All No: 0 Yes, prediction ">500 will say Yes" is false, but they answered No. ✓
+- Mixed at 600/400: 600 answered Yes, 400 answered No.
+  - 600 predicted >500 Yes: correct!
+  - 400 predicted ≤500 Yes: wrong!
+  - The 400 should switch to Yes. Not stable.
+
+ARCHETYPE SCORES:
+- Originality: 9/10 (novel self-referential survey)
+- Cleverness: 9/10 (dual equilibrium is elegant)
+- Simplicity: 8/10 (clear setup)
+- Solution Success: 9/10 (complete equilibrium analysis)
+
+TOTAL: 35/40 ★
+
+========================================================================
+
+RIDDLE 2A2: The Quantum Oracle
+------------------------------------------------------------------------
+SETUP:
+An oracle answers questions about probability. You ask: "What's the probability
+that your next statement will be true?"
+
+The oracle always answers with a probability between 0 and 1, and her accuracy
+matches her stated probability over many trials.
+
+THE QUESTION: What number does she say?
+
+HINT: What happens if she says "0" or "1"?
+
+SOLUTION:
+Step 1: Let p be the probability she states.
+Step 2: If she says p, the statement "this statement has probability p of being true"
+        should itself have probability p of being true.
+Step 3: But what does "true" mean here? The statement IS the probability.
+        The statement "my next statement will be true with probability p" IS her statement.
+
+Step 4: If p = 1: She claims 100% her statement is true. Is it true that it's true
+        with probability 1? Only if it's definitely true. The statement "probability 1"
+        is true iff it's certain. Self-consistent.
+
+Step 5: If p = 0: She claims 0% her statement is true. For this to be consistent,
+        the statement must be false 100% of the time. If it's false that p = 0...
+        then the probability is NOT 0. But then her accuracy (0%) doesn't match (p ≠ 0).
+        Contradiction.
+
+Step 6: If p = 0.5: She claims 50% true. For consistency, the statement should be
+        true 50% of the time. But either the probability IS 0.5 (always) or it isn't.
+        It can't sometimes be 0.5 and sometimes not.
+
+Step 7: The only consistent answer is p = 1 (or any p where we interpret consistency
+        in a specific way).
+
+ACTUALLY: Let me reconsider. The oracle's statement is about her NEXT statement.
+But this IS her next statement. So she's making a self-referential claim.
+
+The paradox: If she says "50%", is that statement true or false?
+If true: the probability is actually 50%. But then it should be true 50% of time. ??
+If false: the probability is NOT 50%. What is it?
+
+ANSWER: The question is paradoxical (similar to Liar's Paradox).
+The only escape: She says "1" (100%), which is self-confirming.
+
+ARCHETYPE SCORES:
+- Originality: 7/10 (Liar's paradox variant)
+- Cleverness: 6/10 (gets paradoxical)
+- Simplicity: 7/10 (short setup)
+- Solution Success: 5/10 (resolves into paradox)
+
+TOTAL: 25/40
+
+========================================================================
+
+RIDDLE 2A3: The Polling Prisoner
+------------------------------------------------------------------------
+SETUP:
+A prisoner will be executed at noon tomorrow unless he correctly predicts, tonight,
+what percentage of death row prisoners make correct predictions.
+
+The warden tells him: "Historically, exactly 40% of prisoners correctly predict the
+percentage." This is true - 40% is the actual historical rate.
+
+THE QUESTION: What should the prisoner predict?
+
+HINT: Your prediction affects the statistic you're predicting.
+
+SOLUTION:
+Step 1: Let's say N prisoners have attempted before, with 0.4N correct.
+Step 2: If prisoner predicts 40% and is correct: new stats are (0.4N + 1)/(N + 1).
+        For large N, this is still ≈ 40%. His prediction of 40% is correct.
+
+Step 3: If prisoner predicts 40% and is wrong: new stats are 0.4N/(N + 1) ≈ 40%.
+        But if he's wrong, 40% isn't the right answer? Let's think harder.
+
+Step 4: The percentage is about predicting the percentage. It's meta.
+        Currently 40% predict correctly. What did they predict?
+        They predicted various things. 40% happened to be right.
+
+Step 5: What's the "correct" answer? The percentage is about correct predictions of...
+        the percentage of correct predictions. Let's call the true percentage X.
+
+Step 6: If X = 40%, then predicting "40%" is correct. You join the 40% who are correct.
+        New X = (0.4N + 1)/(N + 1) ≈ 40% for large N. Consistent!
+
+Step 7: If everyone predicted 40%: some are right, some are wrong? No - the question
+        asks what percentage they predict, and if 40% is correct, all who predict 40% are right.
+
+Wait, I'm confusing myself. Let me re-read.
+
+"What percentage of death row prisoners make correct predictions?"
+This is asking about the success rate of predictions. Currently 40% success rate.
+If you predict "40%", and 40% is indeed the success rate, you're correct.
+
+But: Your prediction affects the rate!
+- If you predict 40% and you're correct: rate becomes (0.4N + 1)/(N + 1)
+- If you predict 40% and you're wrong: rate becomes 0.4N/(N + 1)
+
+For 40% to be correct after your prediction:
+Need (0.4N + 1)/(N + 1) = 0.4
+0.4N + 1 = 0.4N + 0.4
+1 = 0.4
+Contradiction!
+
+So predicting "40%" and being correct changes the rate to ABOVE 40%.
+The true answer after correct prediction is (0.4N + 1)/(N + 1) > 40%.
+
+REVISED SOLUTION: Let r be the rate you predict.
+- You're correct if r equals the new rate (after your prediction is counted).
+- If correct: new rate = (0.4N + 1)/(N + 1)
+- For you to be correct: r = (0.4N + 1)/(N + 1) ≈ 40.something% for large N.
+
+But you don't know N! For large N, the change is negligible. Predict 40%.
+
+ANSWER: Predict 40%. For sufficiently large N, this is approximately correct.
+
+ARCHETYPE SCORES:
+- Originality: 8/10 (nice self-referential statistics)
+- Cleverness: 7/10 (the "your prediction affects the stat" angle)
+- Simplicity: 6/10 (setup is a bit convoluted)
+- Solution Success: 7/10 (answer is "approximately 40%")
+
+TOTAL: 28/40
+
+========================================================================

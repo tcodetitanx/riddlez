@@ -1,0 +1,194 @@
+MUTATION 2E - GAME THEORY + SELF-REFERENCE FUSION
+Puzzles with strategic agents whose strategies reference themselves
+========================================================================
+
+RIDDLE 2E1: The Paradoxical Duel
+------------------------------------------------------------------------
+SETUP:
+Two duelists (A and B) will each choose a number from 1-10. If they choose the same
+number, nobody wins. Otherwise, the person who chose the LOWER number wins... UNLESS
+the other chose exactly one higher, in which case the HIGHER number wins.
+
+(Example: 3 beats 5, but 4 beats 3. Same with 7 vs 8, etc.)
+
+THE QUESTION: In Nash equilibrium, what strategy should each duelist use?
+
+HINT: This is related to Rock-Paper-Scissors with 10 options.
+
+SOLUTION:
+Step 1: Winning rules: Lower wins unless loser chose exactly 1 less.
+        - 1 beats 3,4,5,6,7,8,9,10 (not 2)
+        - 2 beats 1 (special) and beats 4,5,6,7,8,9,10 (not 3)
+        - 3 beats 2 (special) and beats 5,6,7,8,9,10 (not 4)
+        - ...
+        - 10 beats 9 (special) only. Loses to everything else.
+
+Step 2: Let's count wins for each number against uniform opponent:
+        - 1: beats 3-10 (8 numbers), loses to 2. Wins 8/9 = 89%
+        - 2: beats 1, 4-10 (8 numbers), loses to 3. Wins 8/9 = 89%
+        - ...
+        - 9: beats 8, loses to 1-7, 10 beats via special? Wait.
+
+Let me recalculate:
+        - 9: beats 8 (special). Loses to 1-7. What about 10?
+          9 vs 10: lower is 9. But 10 is exactly 1 higher. So 10 wins.
+          9 loses to 10 too. 9 beats only 8. Wins 1/9 = 11%.
+        - 10: beats 9 (special). Loses to 1-8. Wins 1/9 = 11%.
+
+Step 3: Lower numbers are much better! 1 and 2 are best.
+        But wait - if everyone plays 1, ties happen. If you play 2 against 1, you win!
+
+Step 4: Pure strategy equilibrium? If A plays 1, B plays 2 to beat 1.
+        If B plays 2, A plays 3 to beat 2. If A plays 3, B plays 4... cycle!
+
+Step 5: Mixed strategy equilibrium: Need equal expected payoff for all strategies played.
+        This is complex, but intuitively: play low numbers more often, with some mixing.
+
+SIMPLIFIED ANSWER: Mix primarily between 1 and 2.
+- If opponent plays 1: you want 2.
+- If opponent plays 2: you want 3.
+- If opponent mixes 1,2: you want 2 (beats 1) or 3 (beats 2).
+
+Symmetric equilibrium: Each plays 1 and 2 with equal probability.
+- P(1 vs 1) = 0.25: tie
+- P(1 vs 2) = 0.25: B wins
+- P(2 vs 1) = 0.25: A wins
+- P(2 vs 2) = 0.25: tie
+Expected payoff: 0 for each. Equilibrium!
+
+ANSWER: Each mixes uniformly between 1 and 2.
+
+VERIFICATION:
+- Against (50% 1, 50% 2): Choosing 1 gives 50% win (vs 2? No, 2 beats 1), 50% tie.
+  Wait, 2 beats 1 via special rule (exactly 1 higher).
+  So 1 vs 2 → 2 wins. 1 never wins against (1,2) mix. 1 gives: 50% tie, 50% loss.
+- Choosing 2: vs 1 → win, vs 2 → tie. 2 gives: 50% win, 50% tie.
+- 2 dominates 1! So pure 2 is better.
+
+NEW ANALYSIS: Against pure 2, play 3 (beats 2). Against 3, play 4. Cycle up to 10.
+Against 10, play 1 (1 beats 10). Full cycle!
+
+ACTUAL EQUILIBRIUM: This is a generalized RPS. Mix over all numbers? Complex.
+
+I'll acknowledge: Full solution requires solving the cyclic game matrix numerically.
+
+ARCHETYPE SCORES:
+- Originality: 8/10 (novel duel mechanics)
+- Cleverness: 7/10 (interesting but incomplete)
+- Simplicity: 6/10 (rules need parsing)
+- Solution Success: 5/10 (didn't fully solve)
+
+TOTAL: 26/40
+
+========================================================================
+
+RIDDLE 2E2: The Recursive Election
+------------------------------------------------------------------------
+SETUP:
+Three candidates (A, B, C) run for election. 99 voters will vote. Each voter's
+preference is determined by their PREDICTION of who will win:
+
+- Voters 1-33 will vote for whoever they predict will LOSE.
+- Voters 34-66 will vote for whoever they predict will WIN.
+- Voters 67-99 will vote for the candidate they predict will come in SECOND.
+
+All voters are perfect predictors (they accurately predict the final result, then
+vote according to their rule).
+
+THE QUESTION: Who wins?
+
+HINT: Consider fixed points.
+
+SOLUTION:
+Step 1: Let the final result be A wins, B second, C third.
+        - Voters 1-33 vote for C (predicted loser). 33 votes for C.
+        - Voters 34-66 vote for A (predicted winner). 33 votes for A.
+        - Voters 67-99 vote for B (predicted second). 33 votes for B.
+        Result: A=33, B=33, C=33. THREE-WAY TIE. Nobody wins! Contradiction.
+
+Step 2: Try: A wins, B and C tied for second.
+        - Voters 1-33 vote for B or C (both "lose" equally?). Unclear.
+        - This case is ambiguous.
+
+Step 3: Try: All three tied.
+        - Voters 1-33 vote for... any (all tied). Unclear.
+        - Voters 34-66 vote for any (all tied). Unclear.
+        - Voters 67-99 vote for any (all tied).
+        If votes split evenly: 33 each. TIE confirmed!
+        Self-consistent? If outcome is tie, and each group splits 11-11-11, then
+        A=B=C=33. Yes, tie is self-consistent.
+
+Step 4: Is there a NON-tie equilibrium?
+        Suppose A wins strictly: A > B ≥ C.
+        - Voters 1-33 vote for loser (C). C gets 33.
+        - Voters 34-66 vote for winner (A). A gets 33.
+        - Voters 67-99 vote for second (B). B gets 33.
+        Result: A=33, B=33, C=33. TIE. Contradicts "A wins strictly."
+
+Step 5: Any strict ordering leads to tie (each group votes for a different candidate).
+        The only stable outcome is a three-way tie.
+
+ANSWER: Three-way tie (33 votes each).
+
+VERIFICATION:
+- If outcome is tie, each "prediction" is ambiguous (no clear winner/loser/second).
+- Reasonable interpretation: votes split evenly within each group.
+- 33 voters × 3 groups = 99 votes. 33 each = confirmed tie.
+- If any strict ordering is predicted, votes split 33-33-33, forcing tie.
+- Self-fulfilling tie! ✓
+
+ARCHETYPE SCORES:
+- Originality: 9/10 (novel self-referential voting)
+- Cleverness: 9/10 (the forced-tie insight is excellent)
+- Simplicity: 7/10 (rules need careful reading)
+- Solution Success: 9/10 (complete analysis)
+
+TOTAL: 34/40 ★
+
+========================================================================
+
+RIDDLE 2E3: The Infinite Regress Auction
+------------------------------------------------------------------------
+SETUP:
+An item worth $100 to each of two bidders is auctioned. The rule: each bidder's
+bid must be exactly TWICE the other bidder's bid.
+
+THE QUESTION: What happens?
+
+HINT: Can both rules be satisfied?
+
+SOLUTION:
+Step 1: Let A bid x, B bid y.
+        Rule: x = 2y AND y = 2x.
+        Substituting: x = 2(2x) = 4x → 3x = 0 → x = 0.
+        Then y = 2(0) = 0.
+
+Step 2: Both bid $0. Does this satisfy the rule?
+        - A's bid (0) must be twice B's bid (0): 0 = 2(0) = 0. ✓
+        - B's bid (0) must be twice A's bid (0): 0 = 2(0) = 0. ✓
+
+Step 3: Both bid $0. The item goes to... nobody? Or random winner?
+        If random winner at $0, expected payoff = $50 each.
+
+Step 4: Can either deviate?
+        If A bids $1, rule says B must bid $2 (to be twice A's bid).
+        But then A must bid $4 (twice B's $2). Contradiction!
+        No bid except $0 satisfies both constraints.
+
+ANSWER: Both bid $0. The item is won for free (by tiebreaker or split).
+
+INSIGHT: Self-referential constraints often collapse to trivial solutions.
+
+VERIFICATION:
+- (0, 0): 0 = 2×0 ✓, 0 = 2×0 ✓
+- Any other pair: x = 2y and y = 2x → x = 0, y = 0. Only solution. ✓
+
+ARCHETYPE SCORES:
+- Originality: 7/10 (simple but elegant)
+- Cleverness: 8/10 (the collapse to zero is surprising)
+- Simplicity: 10/10 (crystal clear)
+- Solution Success: 10/10 (perfect)
+
+TOTAL: 35/40 ★
+
+========================================================================

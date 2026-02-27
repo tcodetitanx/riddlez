@@ -1,0 +1,191 @@
+MUTATION 2B - COMMON KNOWLEDGE + GAME THEORY FUSION
+Puzzles where strategic behavior depends on what everyone knows everyone knows
+========================================================================
+
+RIDDLE 2B1: The Announced Auction
+------------------------------------------------------------------------
+SETUP:
+Three bidders (A, B, C) will bid for a prize worth $100 to each. Before bidding,
+an announcer says: "I will now tell you something you all already know: Each of
+you values this prize at $100."
+
+Bidding is first-price sealed-bid. Highest bid wins and pays their bid.
+
+THE QUESTION: Does the announcement change optimal bidding?
+
+HINT: Before the announcement, each person KNEW the values. But did they know
+that everyone else knew?
+
+SOLUTION:
+Step 1: Before announcement: Each knows their own value ($100). Each might not know
+        if others know their values (private vs common knowledge).
+
+Step 2: In private values auction: Each bids based on their own value, not others'.
+        Optimal bid for risk-neutral bidder: shade bid below value.
+        With 3 bidders, uniform distribution: bid (n-1)/n × 100 = 2/3 × 100 = $66.67.
+
+Step 3: After announcement: Values are common knowledge. Everyone knows everyone
+        values it at $100. Does this change bidding?
+
+Step 4: In symmetric private value auction, knowing others' values shouldn't change
+        your strategy (your value is what matters for your bid).
+
+Step 5: But wait - if everyone KNOWS everyone values it equally, coordination changes.
+        They might collude or compete differently.
+
+Step 6: In a ONE-SHOT sealed bid: The Nash equilibrium is unchanged. Each bids $66.67.
+        Knowing others' values doesn't help you - it only confirms symmetry.
+
+Step 7: HOWEVER: If bidders could coordinate, they might agree to all bid $0 or $1.
+        Common knowledge enables coordination that wasn't possible before.
+
+ANSWER: In Nash equilibrium, the announcement doesn't change bids (~$67 each).
+But if coordination is possible, common knowledge enables collusion.
+
+The insight: Common knowledge doesn't change individual rationality, but it enables
+coordination by making it public that everyone knows the same thing.
+
+VERIFICATION:
+- Without announcement: Each bids ~$67 (Nash equilibrium).
+- With announcement: Each still bids ~$67 (same equilibrium).
+- Difference: With common knowledge, they COULD coordinate to bid $1 each.
+  But in one-shot Nash, they don't trust coordination.
+
+ARCHETYPE SCORES:
+- Originality: 6/10 (auction theory is well-known)
+- Cleverness: 7/10 (the common knowledge enabling coordination insight is nice)
+- Simplicity: 8/10 (clear setup)
+- Solution Success: 8/10 (complete analysis)
+
+TOTAL: 29/40
+
+========================================================================
+
+RIDDLE 2B2: The Transparent Standoff
+------------------------------------------------------------------------
+SETUP:
+Three gunfighters (A, B, C) are in a standoff. Each will shoot at one target.
+- A is a perfect shot (always hits)
+- B hits 80% of the time
+- C hits 50% of the time
+
+If shot, you die. Each wants to survive. They shoot simultaneously. All three
+know all accuracies (common knowledge).
+
+THE QUESTION: Who should each person target?
+
+HINT: Being dangerous makes you a target.
+
+SOLUTION:
+Step 1: A is most dangerous (100%), then B (80%), then C (50%).
+Step 2: A should shoot the biggest threat to A. That's B (80% accurate).
+Step 3: B should shoot the biggest threat to B. That's A (100% accurate).
+Step 4: C should shoot the biggest threat to C. That's A (100% accurate).
+
+Step 5: Equilibrium: A shoots B, B shoots A, C shoots A.
+        - A is targeted by both B and C.
+        - P(A survives) = P(B misses) × P(C misses) = 0.2 × 0.5 = 0.1 = 10%
+        - P(B survives) = P(A misses) = 0 (A never misses). B dies.
+        - P(C survives) = 1 (nobody shoots C). C survives 100%!
+
+Step 6: Wait - this isn't stable! If A knows C survives 100%, A might shoot C?
+        No - A's survival depends on removing B. If A shoots C, B still has 80% to hit A.
+
+Step 7: Can C do better? C could shoot B instead of A.
+        - If C shoots B and hits (50%): B might die (if A also shoots B).
+        - But C's survival is already 100% by not being targeted.
+        - Shooting A increases A's chance of dying from 90% to 95% (marginal).
+        - Shooting B instead: If B dies, A shoots... C? No, A still prefers B dead.
+
+REVISED: Let's think about what happens:
+- A's best target: B (80% threat)
+- B's best target: A (100% threat)
+- C's best target: A (100% threat)
+
+But C has 50% hit rate. Even if C shoots A and misses, B also shoots A.
+P(A dies) = P(B hits OR C hits) = 1 - (1-0.8)(1-0.5) = 1 - 0.1 = 0.9.
+A dies 90%. A shoots B, B dies 100%.
+C lives 100% (untargeted).
+
+C IS THE WINNER by being the least threatening!
+
+ANSWER: A shoots B, B shoots A, C shoots A. C survives with probability 1.
+
+INSIGHT: Being the weakest is an advantage - no one bothers to shoot you.
+
+VERIFICATION:
+- A targets B (biggest threat that could kill A). ✓
+- B targets A (certain to kill B if alive). ✓
+- C targets A (certain to kill C if alive). ✓
+- C is never targeted (too weak to be worth a bullet). ✓
+
+ARCHETYPE SCORES:
+- Originality: 6/10 (truel is classic, but common knowledge angle is explicit)
+- Cleverness: 8/10 (the "weakest wins" insight is delightful)
+- Simplicity: 9/10 (clear setup)
+- Solution Success: 9/10 (verified equilibrium)
+
+TOTAL: 32/40
+
+========================================================================
+
+RIDDLE 2B3: The Knowledge Cascade
+------------------------------------------------------------------------
+SETUP:
+Five people (A, B, C, D, E) sit in a circle. Each has a secret number (1-5, all
+different, randomly assigned). Each can see their two neighbors' numbers.
+
+A moderator announces: "Everyone with a number greater than their left neighbor
+knows they have a number greater than their left neighbor."
+
+This is obviously true (tautology). But then everyone starts deducing things.
+
+THE QUESTION: After the announcement, who (if anyone) can determine their own number?
+
+HINT: The announcement converts mutual knowledge into common knowledge.
+
+SOLUTION:
+Step 1: Before announcement: Each person sees two numbers. Five positions with
+        numbers 1, 2, 3, 4, 5 distributed.
+
+Step 2: Person with 1 knows neighbors have larger numbers. Person with 5 knows neighbors
+        have smaller numbers.
+
+Step 3: The announcement says "if you have X and left has Y, and X > Y, you know X > Y."
+        This adds NO information directly (everyone already knows their relative sizes).
+
+Step 4: What changes? COMMON KNOWLEDGE that everyone reasons the same way.
+
+Step 5: Example arrangement: A=3, B=1, C=5, D=2, E=4 (around circle).
+        - A sees E=4 (left) and B=1 (right). A's number (3) < left (4) and > right (1).
+        - A knows: I'm not 5 (since someone to my left is 4, I could be 5, but 5 > 4 so
+          if I were 5, I'd know I'm greater than left... which is tautological).
+
+Step 6: This is getting complex. Let me consider what the 1-holder knows.
+        Person with 1: Both neighbors are larger. They know their number is the smallest
+        among the three visible (self + two neighbors). But they can't be sure they have 1
+        unless they can deduce the full arrangement.
+
+Step 7: After announcement + common reasoning:
+        - The person with 1 can deduce they have 1 (smallest possible, both neighbors larger).
+        - They already knew this before the announcement!
+
+Actually, I realize: the announcement doesn't help here because it's tautological.
+"If X > Y, you know X > Y" adds no new information.
+
+The REAL common knowledge puzzles (like Green Eyes) announce something that IS already
+known individually but becomes COMMONLY known.
+
+This puzzle needs revision to work properly.
+
+ANSWER: This puzzle as constructed doesn't work - the announcement is vacuous.
+
+ARCHETYPE SCORES:
+- Originality: 7/10 (attempted interesting setup)
+- Cleverness: 4/10 (doesn't actually work)
+- Simplicity: 5/10 (confusing)
+- Solution Success: 3/10 (puzzle fails)
+
+TOTAL: 19/40 [BROKEN]
+
+========================================================================

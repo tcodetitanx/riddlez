@@ -1,0 +1,106 @@
+================================================================================
+                    GENERATION 2 EVALUATION
+                    15 Riddles from 5 Archetype Fusion Variants
+================================================================================
+
+MUTATION 2A (Bayesian + Self-Reference):
+--------------------------------------------------------------------------------
+2A1: Self-Fulfilling Survey    - EXCELLENT (dual equilibrium)    - 35/40 ★
+2A2: Quantum Oracle            - Paradoxical (incomplete)        - 25/40
+2A3: Polling Prisoner          - Good but convoluted             - 28/40
+
+MUTATION 2B (Common Knowledge + Game Theory):
+--------------------------------------------------------------------------------
+2B1: Announced Auction         - Standard but insightful         - 29/40
+2B2: Transparent Standoff      - Classic truel, well-analyzed    - 32/40
+2B3: Knowledge Cascade         - BROKEN (tautological)           - 19/40
+
+MUTATION 2C (State Space + Encoding):
+--------------------------------------------------------------------------------
+2C1: Truth Path                - Incomplete analysis             - 21/40
+2C2: Binary Labyrinth          - Good info-theoretic puzzle      - 31/40
+2C3: Hamiltonian Messenger     - BROKEN (contradictory)          - 16/40
+
+MUTATION 2D (Constraint Satisfaction + Parity):
+--------------------------------------------------------------------------------
+2D1: Parity Prison             - EXCELLENT parity insight        - 33/40
+2D2: Checkered Choices         - Classic but clean               - 32/40
+2D3: Odd One Out               - Good impossibility proof        - 32/40
+
+MUTATION 2E (Game Theory + Self-Reference):
+--------------------------------------------------------------------------------
+2E1: Paradoxical Duel          - Complex, incomplete             - 26/40
+2E2: Recursive Election        - EXCELLENT self-fulfilling tie   - 34/40 ★
+2E3: Infinite Regress Auction  - EXCELLENT collapse to zero      - 35/40 ★
+
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+
+Total Riddles: 15
+Broken Riddles: 2 (2B3, 2C3)
+Incomplete Solutions: 3 (2A2, 2C1, 2E1)
+Excellent (33+): 5
+
+Working Riddle Scores:
+2A1: 35★  2A2: 25   2A3: 28   2B1: 29   2B2: 32   2C2: 31
+2D1: 33   2D2: 32   2D3: 32   2E2: 34★  2E3: 35★
+
+Average Score (working riddles): 30.55/40 (+2.3 from Gen 1)
+
+BEST RIDDLES (tied at 35/40):
+1. 2A1 - The Self-Fulfilling Survey
+2. 2E3 - The Infinite Regress Auction
+
+BEST MUTATION: 2D (Constraint + Parity) - all 3 working, avg 32.33
+SECOND BEST: 2E (Game Theory + Self-Reference) - 2 excellent, 1 incomplete
+
+================================================================================
+PROGRESS TRACKING
+================================================================================
+Gen 0.1 Best: Clone Dilemma - 35/40
+Gen 1 Best: Predicting Prisoners - 33/40
+Gen 2 Best: Self-Fulfilling Survey / Infinite Regress Auction - 35/40 (tie)
+
+IMPROVEMENT: Matched Gen 0 best, consistent 35/40 now achievable.
+
+Next target: 36+/40 → Need to close gap on 10/10 in individual categories.
+
+Current ceiling analysis:
+- Originality: hitting 8-9/10 regularly
+- Cleverness: hitting 8-9/10 regularly
+- Simplicity: strong at 9-10/10
+- Solution Success: strong at 9-10/10
+
+To reach 40/40: Need 10/10 Originality (genuinely unprecedented) with
+10/10 Cleverness (paradigm-shifting insight).
+
+================================================================================
+WINNING PROMPTS FOR GENERATION 3
+================================================================================
+COMBINED APPROACH: Merge best mutations (2A, 2D, 2E)
+
+"Create a puzzle where:
+1. SELF-REFERENCE: What is being asked affects the answer (from 2A, 2E)
+2. PARITY INSIGHT: The solution involves non-obvious odd/even analysis (from 2D)
+3. CONSTRAINT COLLAPSE: Seemingly complex rules simplify to elegant conclusion (from 2E)
+
+The ideal puzzle has:
+- A setup that seems to allow many possibilities
+- A solution that reveals there's only ONE possibility (or zero!)
+- The insight comes from noticing a self-referential or parity constraint
+
+Examples of the target structure:
+- 'Predict X' where X depends on predictions → forces specific equilibrium
+- 'Choose N where N must satisfy rule involving N' → often forces N=0 or N=all
+- 'Toggle items with parity constraint' → often forces all-or-nothing result"
+
+================================================================================
+BEST RIDDLES FOR PDF EXPORT
+================================================================================
+1. The Self-Fulfilling Survey (2A1) - 35/40
+2. The Infinite Regress Auction (2E3) - 35/40
+3. The Recursive Election (2E2) - 34/40
+4. The Parity Prison (2D1) - 33/40
+
+================================================================================

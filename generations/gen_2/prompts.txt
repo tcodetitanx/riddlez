@@ -1,0 +1,62 @@
+GENERATION 2 - ARCHETYPE FUSION VARIANTS
+=========================================
+Base: Mutation E from Gen 1 (Archetype Fusion Novelty)
+Strategy: Each mutation explores a specific unexplored fusion
+
+================================================================================
+MUTATION 2A: Bayesian + Self-Reference
+================================================================================
+"Create a puzzle where updating beliefs changes the thing you're reasoning about.
+The act of observation or prediction must affect probabilities in a way that
+requires considering your own impact on the system.
+
+Examples:
+- Your estimate of X affects X
+- Learning information changes what's true
+- The probability of your prediction being right depends on what you predict"
+
+================================================================================
+MUTATION 2B: Common Knowledge + Game Theory
+================================================================================
+"Create a puzzle where strategic behavior depends on what everyone knows everyone
+knows. The optimal move changes based on levels of meta-knowledge.
+
+Examples:
+- A strategy only works if everyone knows it exists
+- The announcement of a rule changes how people play
+- Coordination requires common knowledge of some fact"
+
+================================================================================
+MUTATION 2C: State Space + Encoding
+================================================================================
+"Create a puzzle where navigating through states reveals or hides information.
+The path you take encodes or decodes a message.
+
+Examples:
+- Your route through a maze spells out the answer
+- Each move reveals one bit of information about the goal
+- The constraints on movement encode a secret pattern"
+
+================================================================================
+MUTATION 2D: Constraint Satisfaction + Parity
+================================================================================
+"Create a puzzle where constraints involve parity (odd/even) in non-obvious ways.
+The solution must satisfy both explicit constraints and hidden parity requirements.
+
+Examples:
+- Arrangements where odd/even positions matter
+- Solutions that only work with certain count parities
+- Constraints that secretly depend on parity of some property"
+
+================================================================================
+MUTATION 2E: Game Theory + Self-Reference (Double Down)
+================================================================================
+"Create a puzzle with strategic agents whose strategies reference themselves.
+What you should do depends on what others do, which depends on what you do.
+
+Examples:
+- Players predicting each other's predictions of their predictions
+- Strategies that only work if no one expects them
+- Games where the rules depend on players' beliefs about the rules"
+
+================================================================================

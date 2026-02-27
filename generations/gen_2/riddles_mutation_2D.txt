@@ -1,0 +1,179 @@
+MUTATION 2D - CONSTRAINT SATISFACTION + PARITY FUSION
+Puzzles where constraints involve parity in non-obvious ways
+========================================================================
+
+RIDDLE 2D1: The Parity Prison
+------------------------------------------------------------------------
+SETUP:
+A prison has 100 cells numbered 1-100, arranged in a row. Each cell has a light
+that's either ON or OFF. Initially, all lights are OFF.
+
+A prisoner walks down the row. At cell N, they MUST toggle the light IF:
+- N is even AND they've toggled an ODD number of lights so far, OR
+- N is odd AND they've toggled an EVEN number of lights so far
+
+THE QUESTION: After walking past all 100 cells, which lights are ON?
+
+HINT: Track the parity of your toggle count as you go.
+
+SOLUTION:
+Step 1: Start at cell 1. Toggled so far: 0 (even).
+        Cell 1 is odd. Rule: toggle if odd cell AND even count. Yes! Toggle cell 1.
+        Count: 1 (odd).
+
+Step 2: Cell 2. Count is odd.
+        Cell 2 is even. Rule: toggle if even cell AND odd count. Yes! Toggle cell 2.
+        Count: 2 (even).
+
+Step 3: Cell 3. Count is even.
+        Cell 3 is odd. Rule: toggle if odd cell AND even count. Yes! Toggle cell 3.
+        Count: 3 (odd).
+
+Step 4: Pattern emerging: at every cell, the condition is met!
+        - At odd cell with even count: toggle (makes count odd).
+        - At even cell with odd count: toggle (makes count even).
+
+Step 5: The parity of count always matches the parity of the cell number after processing.
+        So at cell N: we've toggled N-1 times, count = N-1.
+        If N is odd: count N-1 is even. Condition met, toggle.
+        If N is even: count N-1 is odd. Condition met, toggle.
+
+Step 6: ALL 100 cells are toggled exactly once.
+
+ANSWER: All 100 lights are ON.
+
+VERIFICATION:
+- Cell 1: toggle (odd cell, 0 even toggles). Light ON.
+- Cell 2: toggle (even cell, 1 odd toggle). Light ON.
+- Cell 3: toggle (odd cell, 2 even toggles). Light ON.
+- ...
+- Cell 100: toggle (even cell, 99 odd toggles). Light ON.
+- All lights ON. ✓
+
+ARCHETYPE SCORES:
+- Originality: 8/10 (novel parity mechanism)
+- Cleverness: 8/10 (the "always toggle" discovery is nice)
+- Simplicity: 7/10 (rules need careful reading)
+- Solution Success: 10/10 (complete, verified)
+
+TOTAL: 33/40
+
+========================================================================
+
+RIDDLE 2D2: The Checkered Choices
+------------------------------------------------------------------------
+SETUP:
+Alice and Bob play a game on a 4×4 grid. They take turns placing tokens.
+- Alice places white tokens on white squares (like a checkerboard).
+- Bob places black tokens on black squares.
+- Alice goes first.
+
+A player wins if they complete a row, column, or diagonal of their color tokens.
+Each player plays optimally.
+
+THE QUESTION: Who wins?
+
+HINT: Count the squares.
+
+SOLUTION:
+Step 1: 4×4 checkerboard: 8 white squares, 8 black squares.
+Step 2: Alice places on white, Bob on black. They don't block each other!
+Step 3: Wait - can a row/column/diagonal be all one color?
+
+Step 4: Checkerboard coloring: adjacent squares are different colors.
+        A row of 4: alternates W-B-W-B or B-W-B-W. No row is monochrome.
+        Same for columns.
+
+Step 5: Diagonals? The main diagonals (4 squares) alternate too.
+        Short diagonals (2-3 squares) also alternate.
+
+Step 6: THERE IS NO ROW, COLUMN, OR DIAGONAL OF ALL ONE COLOR on a checkerboard!
+
+Step 7: Neither player can win. The game is a guaranteed draw (or infinite).
+
+ANSWER: Neither wins. The game is a draw.
+
+INSIGHT: The checkerboard parity makes all winning lines impossible.
+
+VERIFICATION:
+- Row 1: W-B-W-B. Can't be all white or all black. ✓
+- Column 1: W-B-W-B. Same. ✓
+- Main diagonal: W-B-W-B. Same. ✓
+- No winning condition can be met. ✓
+
+ARCHETYPE SCORES:
+- Originality: 6/10 (checkerboard parity is known)
+- Cleverness: 7/10 (the impossibility insight is clean)
+- Simplicity: 9/10 (very clear setup)
+- Solution Success: 10/10 (perfect)
+
+TOTAL: 32/40
+
+========================================================================
+
+RIDDLE 2D3: The Odd One Out
+------------------------------------------------------------------------
+SETUP:
+You have 9 coins arranged in a 3×3 grid. Each coin shows either HEADS or TAILS.
+The initial configuration has an EVEN number of HEADS in every row, column, and
+both main diagonals (8 lines total).
+
+You must flip exactly ONE coin to make an ODD number of HEADS in every line.
+
+THE QUESTION: Which coin can you flip?
+
+HINT: The center coin is special.
+
+SOLUTION:
+Step 1: Each row has even heads. Each column has even heads. Both diagonals have even heads.
+Step 2: Total heads in grid = sum of row heads = even + even + even = even.
+Step 3: If we flip a coin from T to H: that row/column/diagonal gains 1 head (now odd).
+        If we flip from H to T: that row/column/diagonal loses 1 head (now odd).
+
+Step 4: The center coin is in: row 2, column 2, both diagonals. That's 4 lines.
+        The corner coins are in: 1 row, 1 column, 1 diagonal. That's 3 lines.
+        The edge coins are in: 1 row, 1 column. That's 2 lines.
+
+Step 5: Flipping the center changes parity of 4 lines.
+        Flipping a corner changes parity of 3 lines.
+        Flipping an edge changes parity of 2 lines.
+
+Step 6: We need to change ALL 8 lines from even to odd.
+        One flip can change at most 4 lines (center).
+        We need to change 8 lines with 1 flip? IMPOSSIBLE.
+
+Step 7: Wait, let me recount. There are 8 lines: 3 rows + 3 columns + 2 diagonals.
+        Each coin is in exactly:
+        - Center: 1 row + 1 col + 2 diag = 4 lines
+        - Corner: 1 row + 1 col + 1 diag = 3 lines
+        - Edge: 1 row + 1 col + 0 diag = 2 lines
+
+Step 8: To change all 8 from even to odd, we need to flip parity of all 8.
+        But any single flip changes at most 4. Impossible!
+
+ANSWER: It's IMPOSSIBLE to flip exactly one coin to make all lines odd.
+
+WAIT - let me verify the premise. Is the initial state possible?
+
+Step 9: Every row even, every column even. Let H be the 3×3 matrix of heads (1) and tails (0).
+        Sum of each row = even. Sum of each column = even.
+        Sum of matrix = even (sum of row sums).
+        Diagonals: for BOTH diagonals to be even while rows/cols are even... is this possible?
+
+        Example: All zeros (all tails). Every line is 0 (even). ✓
+        In this case, flipping ANY coin makes that coin's lines odd (one flip, not all 8).
+
+        The puzzle asks to make ALL 8 lines odd with one flip. But one flip affects
+        2-4 lines, not all 8.
+
+FINAL ANSWER: Impossible. No single flip can change all 8 lines from even to odd.
+
+ARCHETYPE SCORES:
+- Originality: 7/10 (nice parity grid puzzle)
+- Cleverness: 8/10 (the counting argument is elegant)
+- Simplicity: 8/10 (clear setup)
+- Solution Success: 9/10 (impossibility proven)
+
+TOTAL: 32/40
+
+========================================================================

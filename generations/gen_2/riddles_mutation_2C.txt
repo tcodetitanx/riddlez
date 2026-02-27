@@ -1,0 +1,190 @@
+MUTATION 2C - STATE SPACE + ENCODING FUSION
+Puzzles where navigation through states encodes/decodes information
+========================================================================
+
+RIDDLE 2C1: The Truth Path
+------------------------------------------------------------------------
+SETUP:
+A maze has 7 rooms in a line (1-2-3-4-5-6-7). You start in room 1 and must reach
+room 7. Each room has two doors labeled "Truth" and "Lie."
+
+When you enter a room via "Truth," you receive a true statement about the treasure's
+location. When you enter via "Lie," you receive a false statement.
+
+You don't know which door is which until you've reached the end and can verify.
+The treasure is in exactly one room (1-7).
+
+THE QUESTION: Is there a path that GUARANTEES you find the treasure's location?
+
+HINT: Can the sequence of statements constrain the possible locations?
+
+SOLUTION:
+Step 1: From room 1, you go to room 2 via either door. You receive statement S1.
+        From room 2 to 3, statement S2. And so on through S6.
+
+Step 2: Each statement is either true or false. 6 statements = 64 possible
+        truth-value combinations.
+
+Step 3: The treasure is in one of 7 rooms. If each statement is about the treasure,
+        there are 7 possibilities to distinguish.
+
+Step 4: Strategy: At each room, ask "Is the treasure in room [current room number]?"
+        If you entered via Truth: "Yes" means treasure here, "No" means not here.
+        If you entered via Lie: "Yes" means treasure NOT here, "No" means treasure here.
+
+Step 5: But you don't know which door you took! The labels are unknown.
+
+Step 6: NEW APPROACH: The path you take ENCODES which doors you chose.
+        If you always choose left door: that's one sequence.
+        If you alternate: another sequence.
+
+Step 7: The answer reveals the pattern. If 4 statements say "Yes" and 2 say "No,"
+        the treasure location and your path are jointly constrained.
+
+Wait, this is getting complicated. Let me design a solvable version.
+
+REDESIGN: Each room states "The treasure is [some number] rooms away from this room."
+At the end (room 7), you know your 6 statements. If you know your path's
+truth/lie pattern, you can solve it.
+
+But you don't know the pattern!
+
+INSIGHT: The 6 statements must be consistent with exactly ONE treasure location,
+regardless of which doors were Truth/Lie. This happens when the statements
+over-constrain the system.
+
+ANSWER: There is NO guaranteed path. You need external information about which
+doors are which, or the statements must be cleverly designed.
+
+Actually, let me reconsider:
+
+FINAL ANSWER: If the puzzle-maker designed the statements cleverly, there's a
+solution. If statements are arbitrary, no guarantee exists.
+
+This puzzle needs a specific instantiation to be solvable.
+
+ARCHETYPE SCORES:
+- Originality: 7/10 (interesting setup)
+- Cleverness: 5/10 (doesn't resolve cleanly)
+- Simplicity: 5/10 (complex rules)
+- Solution Success: 4/10 (incomplete)
+
+TOTAL: 21/40
+
+========================================================================
+
+RIDDLE 2C2: The Binary Labyrinth
+------------------------------------------------------------------------
+SETUP:
+A maze is a binary tree with 8 leaves. Each internal node is a room with exactly
+2 exits (Left and Right). You start at the root and must reach a specific leaf.
+
+At each room, you receive one bit of information about the target leaf's position.
+But the bit is revealed AFTER you choose which way to go (and can't go back).
+
+THE QUESTION: What's the probability of reaching the target leaf if you move randomly?
+
+HINT: How many bits of information do you receive? How many do you need?
+
+SOLUTION:
+Step 1: Binary tree with 8 leaves = 3 levels deep. Root → 2 children → 4 grandchildren → 8 leaves.
+
+Step 2: To reach a specific leaf, you need to make 3 correct binary choices.
+        Random choice at each: P(correct) = (1/2)^3 = 1/8.
+
+Step 3: But you receive bits of information! After choosing at level 1, you learn 1 bit
+        about the target. After level 2, another bit. After level 3, a third bit.
+        Total: 3 bits.
+
+Step 4: 3 bits = enough to specify 8 leaves. But you receive bits AFTER you move!
+
+Step 5: Move 1: Random (1/2 correct). Then receive bit 1.
+        - If bit 1 confirms your choice: you're on right path.
+        - If bit 1 contradicts: you're already wrong. Game over.
+
+Step 6: If the bit reveals whether you're correct: P(reaching target) = (1/2)^3 = 1/8.
+        The bits don't help because you can't go back!
+
+Step 7: ALTERNATIVE: What if the bit tells you about the REMAINING path?
+        After move 1, bit 1 tells you which way at level 2. Then you use it.
+        After move 2, bit 2 tells you which way at level 3. Then you use it.
+        After move 3, bit 3 is useless (already at leaf).
+
+        P(correct at level 1) = 1/2.
+        Given bit 1, P(correct at level 2) = 1 (you know the right way).
+        Given bit 2, P(correct at level 3) = 1.
+        P(reaching target) = 1/2 × 1 × 1 = 1/2.
+
+ANSWER: 1/2 (the first move is a guess; subsequent moves use the bits).
+
+VERIFICATION:
+- First move: 50% chance of correct branch.
+- If correct, bit 1 tells you about level 2. You get it right.
+- Bit 2 tells you about level 3. You get it right.
+- Overall: 50%.
+
+ARCHETYPE SCORES:
+- Originality: 7/10 (information-theoretic maze)
+- Cleverness: 8/10 (the delayed-bit insight is nice)
+- Simplicity: 7/10 (needs careful reading)
+- Solution Success: 9/10 (complete)
+
+TOTAL: 31/40
+
+========================================================================
+
+RIDDLE 2C3: The Hamiltonian Messenger
+------------------------------------------------------------------------
+SETUP:
+A network of 6 cities (A, B, C, D, E, F) is connected in a ring (A-B-C-D-E-F-A).
+A messenger must visit each city exactly once and return to start (Hamiltonian cycle).
+
+At each city, the messenger receives one character of a 6-letter password. The
+character depends on which city they came FROM:
+- Arriving from clockwise: uppercase letter
+- Arriving from counterclockwise: lowercase letter
+
+The password is "AaBbCc" (alternating case).
+
+THE QUESTION: In which city does the messenger start?
+
+HINT: The case pattern encodes the direction sequence.
+
+SOLUTION:
+Step 1: "AaBbCc" = Uppercase, lowercase, Uppercase, lowercase, Uppercase, lowercase.
+        This means: clockwise arrival, counter, clock, counter, clock, counter.
+
+Step 2: Let's say starting city is X. First arrival is at... wait, where do you
+        "arrive" first? At the starting city?
+
+Step 3: Reinterpret: The messenger visits 6 cities, receiving 6 characters.
+        At each city, the character case depends on arrival direction.
+
+Step 4: Sequence of arrival directions: CW, CCW, CW, CCW, CW, CCW.
+        This means the messenger alternates direction? But you can't change direction
+        arbitrarily on a ring...
+
+Step 5: On a ring, from any city you can go CW or CCW. A Hamiltonian path visiting
+        all 6 cities must traverse the ring in one direction (either all CW or all CCW).
+
+Step 6: But the password requires alternating! Contradiction. The puzzle is impossible?
+
+Step 7: WAIT - maybe the ring has additional connections (chords)?
+
+REREAD: "connected in a ring (A-B-C-D-E-F-A)" - only ring connections, no chords.
+
+On a simple ring, Hamiltonian cycle goes around the ring in one direction.
+All arrivals are from the same direction (all CW or all CCW).
+Password would be "AAAAAA" or "aaaaaa", not "AaBbCc".
+
+PUZZLE BROKEN: The requirements are contradictory.
+
+ARCHETYPE SCORES:
+- Originality: 6/10 (nice idea)
+- Cleverness: 3/10 (doesn't work)
+- Simplicity: 5/10 (confusing rules)
+- Solution Success: 2/10 (impossible)
+
+TOTAL: 16/40 [BROKEN]
+
+========================================================================
